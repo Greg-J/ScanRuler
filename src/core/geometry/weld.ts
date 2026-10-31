@@ -80,5 +80,7 @@ export function filterDegenerateTriangles(indices: Uint32Array): Uint32Array {
     out[write + 2] = c
     write += 3
   }
-  return out.slice(0, write)
+  // Ordinary scans keep every triangle. The buffer is already exact-sized;
+  // copying it again would briefly hold another full triangle-index array.
+  return write === out.length ? out : out.slice(0, write)
 }

@@ -7,6 +7,11 @@ saves carry the same number as `appVersion`. How a release is cut is in
 
 ## Unreleased
 
+- **Avoid an extra triangle-buffer copy on import** (2026-10-31). When all
+  triangles survive validation, reuse the filter's already exact-sized output.
+  Triangle order, independent output storage and degenerate filtering stay
+  unchanged; large meshes need one fewer temporary index buffer.
+
 - **Keep CAD build code out of initial page loading** (2026-10-31). The
   fillet-try timeout now lives with the builder's lightweight shared types,
   so reading it no longer pulls the CAD builder into the page bundle.
