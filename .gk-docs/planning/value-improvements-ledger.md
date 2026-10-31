@@ -5,11 +5,11 @@ owned: src/** plugins/** tests/** scripts/** mcp/** CHANGELOG.md package.json pa
 
 Maintain the existing measurement product through repeated inspect → reproduce → repair → verify passes. The October 31 review exercised imports, keyboard controls, save/reopen/export, recovery and agent workflows, read the architecture, measured bundle size and reproduced four bugs. PR #22 already fixes signed-zero welding and units-dialog Enter handling. Remaining evidence covers destructive scan replacement, modal focus escape, main-thread 3MF decompression and eager workspace loading. The Mac browser harness had two independently reproduced native-input failures, repaired during setup. Real private scan fixtures, physical SpaceMouse, Safari/Firefox, and user taste have not been verified.
 
-**7 planned tasks.** New work must earn its place with a reproducible defect or a measured user-visible bottleneck. No feature invention.
+**8 planned tasks.** New work must earn its place with a reproducible defect or a measured user-visible bottleneck. No speculative feature invention. SR-08 is an explicitly requested design overhaul, not an unsolicited redesign.
 
 ## How to work this list
 
-1. Protect work first, then keyboard access, then responsiveness. Finish the selected item before searching for more. No new features, redesigns, preferences, vendors or unrelated refactors.
+1. Protect work first, then keyboard access, then responsiveness. Finish the selected item before searching for more. No speculative features, preferences, vendors or unrelated refactors. Greg explicitly authorized the complete new-design-system overhaul in SR-08; its required UI behavior is in scope.
 2. One item at a time, with a scoped commit and its ledger evidence. Record which product paths belong in an upstream patch. The native task loop currently owns this checkout and automation branch; commit and push verified work directly. No gk supervisor is running. If later migrated to gk run, its isolated-worktree/promotion rules apply instead. Never add work to PR #22.
 3. Gate every change with `.greenskeeper.json`'s verify command, verbatim. The command is `bash scripts/prepare-verification.sh && npm test -- --maxWorkers=2 && npm --prefix mcp test && npm run build && npm run e2e:ci`. Also run the item's regression through its real user/agent entry point. Reproduce before repair, keep original assertions and tolerances, and require the new regression to fail without the fix. A red gate requires diagnosing and reverting the unverified edit before moving on; record the cause. Never weaken a test, scene or gate.
 4. Tick completed boxes and update Status in the same commit. Record before/after evidence and verification limits. No blanket claims that a feature works because a unit test passed.
@@ -37,15 +37,16 @@ Maintain the existing measurement product through repeated inspect → reproduce
 ## Status
 
 ```
-Protect work and access       1 / 2
+Protect work and access       2 / 2
 Measure and reduce overhead   0 / 3
 Inspect workflows and guidance 0 / 2
+Adopt supplied design system  0 / 1
                              ---------
-                             1 / 7 planned tasks
+                             2 / 8 planned tasks
 Discovered                   0 / 0
 ```
 
-Last touched: 2026-10-31; SR-01 complete and published as PR #23 under Greg-J. SR-02 has 40 focused browser checks passing; its full gate is running (45894). Native loop remains active.
+Last touched: 2026-10-31; SR01 and SR02 published as PR23 and PR31 under Greg-J. Full gates and isolated validation passed. SR03 measurement next; upstream PR28 already addresses archive expansion. Native loop remains active.
 
 ## Protect work and access
 
@@ -58,12 +59,13 @@ Last touched: 2026-10-31; SR-01 complete and published as PR #23 under Greg-J. S
       **Publication:** integration commit `2f9a99f`; clean upstream commit `c70450d`; https://github.com/CNCKitchen/ScanRuler/pull/23, verified author Greg-J and exact 10-file source/test/docs scope. No automation metadata or PR #22 dependency. No merge or CLA signature.
       route: substantial/agentic
 
-- [ ] **SR-02** · high · `src/ui/SettingsModal.tsx:149`, `src/ui/UnitsModal.tsx`, `src/ui/AgentDataWarning.tsx`, `src/ui/SupportCard.tsx`, `src/ui/Imprint.tsx`
+- [x] **SR-02** · high · `src/ui/SettingsModal.tsx:149`, `src/ui/UnitsModal.tsx`, `src/ui/AgentDataWarning.tsx`, `src/ui/SupportCard.tsx`, `src/ui/Imprint.tsx`
       Settings opens with focus on its trigger and Tab visits background controls. Inspect every actual modal for the same defect, including stacked dialogs; do not convert nonmodal popovers.
       **Fix:** share focus entry, containment, restoration and background interaction protection across actual modals while preserving Escape semantics and native focused-control activation. Preserve the visual design and screen-reader labels. Do not reintroduce the Enter-on-Cancel bug fixed in PR #22.
       refs: `docs/manual.md`, `.gk-docs/reference/runbooks/run-and-publication.md`
       **Acceptance:** Real keyboard tests must cover Tab and Shift+Tab wrapping, restoration to the opener, Escape with an underlying draft, nested agent consent, Cancel versus Open, and no background action while a modal is active.
-      **In progress:** original focus regression failed 22 checks; shared native dialog implementation now passes 40 core/plugin keyboard checks. It preserves focused Cancel/Open, nested dismissal, drafts, and background help/menu/tool windows. Desktop Settings layout before/after matches at x480/y66.5/540×817 with identical font/colors/padding; screenshots inspected. Full gate session 45894 is pending. No clean PR or mobile/browser-wide claim yet.
+      **Proof:** 22 original focus failures; all 40 focused keyboard assertions pass. Full gate: 3,096 unit tests, 123 MCP, build and all executable browser suites pass (private scooter skipped). Clean branch: 75 unit tests, preflight, build and five browser suites pass. Desktop and emulated-phone Settings geometry and styles match baseline; screenshots inspected. No Safari/Firefox or physical-touch claim.
+      **Publication:** integration d2749e9; clean f351648; https://github.com/CNCKitchen/ScanRuler/pull/31 verified OPEN, Greg-J, main, exactly 16 scoped files. No automation metadata or unrelated fixes.
       **Implementation references:** https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/ and https://html.spec.whatwg.org/multipage/interaction.html .
       route: substantial/agentic
 
@@ -102,14 +104,22 @@ Last touched: 2026-10-31; SR-01 complete and published as PR #23 under Greg-J. S
 - [ ] **SR-07** · medium · novice guidance assessment, added by Greg 2026-10-31
       Greg asks whether a guided mode exists for a 3D scanner owner with little or no modeling experience. Audit current onboarding, hints, fit guides, manuals and sample availability before proposing additions.
       **Work:** exercise the actual path from first scan through unit/scale sanity checks, choosing a useful task, making a measurement, understanding confidence/accuracy, recovering from a bad pick, and saving/exporting the result. Compare novice and experienced paths. Distinguish a measurement guide from CAD/reverse-engineering instruction.
-      **Acceptance:** show what already guides the person, where a novice gets stuck (with concrete UI evidence), and a proposed end-to-end guided workflow only where gaps justify it. Present that workflow to Greg for product/taste review before building a new mode. No speculative feature implementation; independently reproducible bugs still get repairs.
+      **Acceptance:** show what already guides the person, where a novice gets stuck (with concrete UI evidence), and a proposed end-to-end guided workflow only where gaps justify it. Use that evidence in the explicitly requested SR-08 overhaul and its task-based onboarding. Present the first complete design for Greg’s visual review before extending it. No speculative feature implementation; independently reproducible bugs still get repairs.
       **Initial evidence (source only):** `src/core/hints.ts` already implements a state-aware next-control ladder; hints default on and retire after two completed visits (`src/state/hintStore.ts`). 3D Measure ends guidance at the first dimension; 2D currently guides image import only. `src/app/stageHints.ts` narrates pick/editor steps. A novice UI walkthrough is still required.
       route: substantial/product-review
+
+- [ ] **SR-08** · high · complete adoption of `new-design-system/`, added by Greg 2026-10-31
+      Greg explicitly requests a full application overhaul following this supplied design system, once the current work reaches a sensible point. This overrides the run's former no-redesign restriction for this item.
+      **Work:** read and render the supplied reference; map its tokens, desktop/mobile shell, project/tool/context panels, selection-driven actions, precise unit-labeled controls, preview/commit/undo, accessible feedback, command discovery and task-based onboarding to ScanRuler's existing capabilities. Preserve original design references and existing feature behavior. Apply the system throughout core 3D/2D measurement, deviation/thickness, mesh tools, reverse engineering, project/import/export, settings/help/recovery and transient UI. Do not replace live controls with mockups or add unsupported CAD/cloud capabilities merely because the generic reference mentions them.
+      **Sequence:** finish work-preservation/access fixes and capture performance baselines; build one complete working screen/tool loop and show it to Greg. His supplied AGENTS.md rule 16 requires approval of one finished piece before producing the rest of the visual overhaul. Keep independent inspections progressing while that decision is pending. After approval, complete the application, not an MVP or reskin.
+      **Acceptance:** a requirement-by-requirement design-system matrix with code/runtime evidence; full functional regression gate; real imported/saved projects and command parity; linked tree/viewport selection; valid contextual actions; exact numeric edits and undo; novice task completion; keyboard and responsive checks including 200% zoom, focus/announcements, reduced motion and visible units; before/after performance comparison on identical inputs. Rendered desktop/mobile application screens must follow the supplied visual reference. Physical pen/touch and unavailable browsers remain explicit validation limits, not claimed passes.
+      **Publication:** commit/push checked design work to Greg's fork, separately from upstream bugfix PRs. Deployment and an upstream design PR require separate authorization. Source reference docs remain inputs, not files to overwrite or claim as our authorship.
+      route: substantial/design-implementation
 
 ## For Greg
 
 - PR #22's CLA remains Greg's legal decision. It blocks upstream merge, not independent inspection or repairs. No agent may sign it.
-- Visual redesigns, new feature requests and physical SpaceMouse testing are outside this run. Bring a concrete proposal only if evidence warrants it.
+- SR08 design overhaul is authorized. First complete working screen needs Greg’s visual approval under his AGENTS rule 16; prepare it before asking. Physical SpaceMouse testing and additional speculative features remain outside autonomous scope.
 
 ## New — found while working, not planned
 
@@ -120,3 +130,5 @@ None yet.
 2026-10-31: Seeded from the completed review. PR #22 is ready under Greg-J. Setup is checking the browser harness and full gate. The runner has not started.
 
 2026-10-31: Native task loop activated after Greenskeeper doctor required missing global skill links. No global links were installed; gk run remains stopped. Missing-link approval is no longer required. Commit 2ceaafe repairs native input simulation; the two previously failing browser suites pass unchanged assertions.
+
+2026-10-31: SR02 published as PR31 after full integration gate and isolated validation. All active verification processes finished. SR03 archive-expansion overlap discovered in upstream PR28 by Jozkah; review rather than duplicate it.
