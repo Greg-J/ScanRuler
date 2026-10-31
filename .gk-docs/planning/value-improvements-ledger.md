@@ -45,7 +45,7 @@ Inspect workflows and guidance 0 / 2
 Discovered                   0 / 0
 ```
 
-Last touched: 2026-10-31; SR-01 complete and published as PR #23 under Greg-J. SR-02 is next. Native loop remains active.
+Last touched: 2026-10-31; SR-01 complete and published as PR #23 under Greg-J. SR-02 has 40 focused browser checks passing; its full gate is running (45894). Native loop remains active.
 
 ## Protect work and access
 
@@ -63,6 +63,8 @@ Last touched: 2026-10-31; SR-01 complete and published as PR #23 under Greg-J. S
       **Fix:** share focus entry, containment, restoration and background interaction protection across actual modals while preserving Escape semantics and native focused-control activation. Preserve the visual design and screen-reader labels. Do not reintroduce the Enter-on-Cancel bug fixed in PR #22.
       refs: `docs/manual.md`, `.gk-docs/reference/runbooks/run-and-publication.md`
       **Acceptance:** Real keyboard tests must cover Tab and Shift+Tab wrapping, restoration to the opener, Escape with an underlying draft, nested agent consent, Cancel versus Open, and no background action while a modal is active.
+      **In progress:** original focus regression failed 22 checks; shared native dialog implementation now passes 40 core/plugin keyboard checks. It preserves focused Cancel/Open, nested dismissal, drafts, and background help/menu/tool windows. Desktop Settings layout before/after matches at x480/y66.5/540×817 with identical font/colors/padding; screenshots inspected. Full gate session 45894 is pending. No clean PR or mobile/browser-wide claim yet.
+      **Implementation references:** https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/ and https://html.spec.whatwg.org/multipage/interaction.html .
       route: substantial/agentic
 
 ## Measure and reduce overhead
