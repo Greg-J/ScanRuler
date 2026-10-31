@@ -5,7 +5,7 @@ owned: src/** plugins/** tests/** scripts/** mcp/** CHANGELOG.md package.json pa
 
 Maintain the existing measurement product through repeated inspect → reproduce → repair → verify passes. The October 31 review exercised imports, keyboard controls, save/reopen/export, recovery and agent workflows, read the architecture, measured bundle size and reproduced four bugs. PR #22 already fixes signed-zero welding and units-dialog Enter handling. Remaining evidence covers destructive scan replacement, modal focus escape, main-thread 3MF decompression and eager workspace loading. The Mac browser harness had two independently reproduced native-input failures, repaired during setup. Real private scan fixtures, physical SpaceMouse, Safari/Firefox, and user taste have not been verified.
 
-**6 planned tasks.** New work must earn its place with a reproducible defect or a measured user-visible bottleneck. No feature invention.
+**7 planned tasks.** New work must earn its place with a reproducible defect or a measured user-visible bottleneck. No feature invention.
 
 ## How to work this list
 
@@ -39,13 +39,13 @@ Maintain the existing measurement product through repeated inspect → reproduce
 ```
 Protect work and access       0 / 2
 Measure and reduce overhead   0 / 3
-Inspect remaining workflows   0 / 1
+Inspect workflows and guidance 0 / 2
                              ---------
-                             0 / 6 planned tasks
+                             0 / 7 planned tasks
 Discovered                   0 / 0
 ```
 
-Last touched: 2026-10-31; native task loop active, global verification running before SR-01.
+Last touched: 2026-10-31; native loop active. SR-01 product commit 2f9a99f passed the full gate (3,096 unit tests, 123 MCP tests, build and executable browser suites; private scooter fixture skipped). Clean upstream-based validation is running in session 18049 before PR publication. Its 12 browser assertions include absent-plugin project data; 7 guard tests pass.
 
 ## Protect work and access
 
@@ -94,6 +94,13 @@ Last touched: 2026-10-31; native task loop active, global verification running b
       refs: `docs/manual.md`, `docs/development.md`
       **Acceptance:** Record the exercised paths, outcomes, explicit blind spots and any new defect IDs. For each repair, preserve a failing-before/passing-after case through a real entry point and an independently reviewed clean PR or a precise publication blocker.
       route: substantial/longctx
+
+- [ ] **SR-07** · medium · novice guidance assessment, added by Greg 2026-10-31
+      Greg asks whether a guided mode exists for a 3D scanner owner with little or no modeling experience. Audit current onboarding, hints, fit guides, manuals and sample availability before proposing additions.
+      **Work:** exercise the actual path from first scan through unit/scale sanity checks, choosing a useful task, making a measurement, understanding confidence/accuracy, recovering from a bad pick, and saving/exporting the result. Compare novice and experienced paths. Distinguish a measurement guide from CAD/reverse-engineering instruction.
+      **Acceptance:** show what already guides the person, where a novice gets stuck (with concrete UI evidence), and a proposed end-to-end guided workflow only where gaps justify it. Present that workflow to Greg for product/taste review before building a new mode. No speculative feature implementation; independently reproducible bugs still get repairs.
+      **Initial evidence (source only):** `src/core/hints.ts` already implements a state-aware next-control ladder; hints default on and retire after two completed visits (`src/state/hintStore.ts`). 3D Measure ends guidance at the first dimension; 2D currently guides image import only. `src/app/stageHints.ts` narrates pick/editor steps. A novice UI walkthrough is still required.
+      route: substantial/product-review
 
 ## For Greg
 
