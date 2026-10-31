@@ -1,0 +1,52 @@
+# ScanRuler local checkout
+
+Audience: Hosted for others. Fixes must work across supported browsers and systems.
+
+Upstream: https://github.com/CNCKitchen/scanruler
+Review baseline: 2cd89c6 (0.9.2), cloned 2026-10-31.
+
+## Greg decisions
+
+2026-10-31: "Put yourself on an automated loop of inspection and improvement, but don't create featuers for the sake of creating them. Only provide genuine value to the end product."
+
+2026-10-31: "When you find and repair bugs specifically, you can create a PR to the main cnckitchen project but make sure you do it as me, under my account, because it is more likely to be accepted."
+
+Verified GitHub account: Greg-J. Keep feature and visual proposals in the review; the first bug-fix PR covers signed-zero welding and units-dialog Enter handling. Do not sign the upstream CLA on Greg’s behalf.
+
+This file is tracked only on the automation branch and must never enter an upstream PR. Upstream contributor instructions are in CONTRIBUTING.md.
+
+## Current handoff
+
+PR: https://github.com/CNCKitchen/ScanRuler/pull/22, author Greg-J. Commit f0fb2eb. Build, 3,089 unit tests, import browser checks, production smoke, and five agent browser suites pass. Baseline macOS mesh-edits and reverse-body-tree browser suites fail; private scan fixtures are absent. Greg must personally decide whether to sign CLA.md in the PR.
+
+Remaining review findings: replacement-scan data loss (measurements cleared without confirmation and history reset), modal focus escaping behind Settings, eager 3.61 MB main JS bundle, large-mesh temporary buffer overhead, synchronous 3MF image decompression with no expansion budget, and mobile support-card obstruction. Product priorities: sample scans and parameter-to-geometry highlighting requested upstream, repeatable inspection workflows, visual report exports, and Mac SpaceMouse compatibility.
+
+## Session overlay
+
+### Extra state verdicts
+- The run is not active until `gk run status` reports RUNNING. A registered hub project is not proof of a running worker.
+- Read the current ledger and PR status rather than repeating historic test counts as current facts.
+
+### Ranking overrides
+- Protect measurements and saved projects before startup speed or cosmetic polish.
+- Only reproduce-and-repair work or measured performance gains belongs in this run. No speculative features.
+
+### Close-pass traps
+- Never send automation files upstream or mix unrelated fixes into PR #22.
+- The existing browser-test failures were reproduced before edits; repair native keyboard/mouse simulation without weakening product assertions.
+- Optional private scan tests are skipped here. Never claim real-scanner accuracy or hardware compatibility.
+
+## Other agents
+
+Read the run ledger and CONTRIBUTING.md. Do not start helpers. During the active run, source paths are owned by the supervisor; other sessions are read-only by convention. Work in the isolated worktree the supervisor supplies. Record evidence and keep changes scoped. The supervisor commits/promotes according to its contract and pushes the automation branch at pass boundaries. Follow the publication runbook for clean upstream PRs under Greg-J only.
+
+## Deploying and safety
+
+No deployment is authorized. Never merge upstream, sign the CLA, alter production, enable paid model fallback, or touch another repo or personal browser profile. See `.gk-docs/reference/runbooks/run-and-publication.md`.
+
+## Commands
+
+- Verify: use `.greenskeeper.json`'s verify command verbatim.
+- Progress: `gk run status`, `gk run ledger`.
+- Stop: `gk run stop`.
+- Docs and bounded work: `.gk-docs/README.md`, `.gk-docs/planning/value-improvements-ledger.md`.

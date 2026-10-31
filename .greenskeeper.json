@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "project": "scan-ruler",
+  "hub": {
+    "slug": "scan-ruler",
+    "url": "https://greenskeeper.live"
+  },
+  "runner": "greenskeeper",
+  "docs": {
+    "planning": ".gk-docs/planning",
+    "inflight": ".gk-docs/in-flight",
+    "closedout": ".gk-docs/closed-out",
+    "reference": ".gk-docs/reference",
+    "runbooks": ".gk-docs/reference/runbooks",
+    "index": ".gk-docs/README.md"
+  },
+  "ledger": "TODO.md",
+  "blockedHeading": "For Greg",
+  "record": [
+    "TODO.md",
+    ".gk-docs/",
+    "CLAUDE.md",
+    "AGENTS.md"
+  ],
+  "statuses": [
+    "authoritative",
+    "needs-update",
+    "in-flight",
+    "closed",
+    "historical",
+    "superseded"
+  ],
+  "state": {
+    "cmd": null,
+    "probes": []
+  },
+  "verify": "bash scripts/prepare-verification.sh && npm test -- --maxWorkers=2 && npm --prefix mcp test && npm run build && npm run e2e:ci"
+}
