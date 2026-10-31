@@ -7,6 +7,11 @@ saves carry the same number as `appVersion`. How a release is cut is in
 
 ## Unreleased
 
+- **Keep 3MF texture extraction off the UI thread** (2026-10-31). Packed
+  images now expand in a short-lived worker, so large textured scans do
+  not freeze interaction during decompression. Original archive bytes and
+  texture colours survive save/reopen; worker failures preserve current work.
+
 - **Keep keyboard focus in dialogs** (2026-10-31). Settings, units, agent
   consent, support and imprint windows now take focus, keep Tab inside, and
   return focus when closed. Escape closes only the top window, leaving
