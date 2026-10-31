@@ -7,6 +7,12 @@ saves carry the same number as `appVersion`. How a release is cut is in
 
 ## Unreleased
 
+- **Check 3MF expansion before allocating** (2026-10-31). Model and texture
+  readers now inspect the complete archive directory against the existing
+  1 GiB project-archive budget before expanding entries. Ignored sidecars and
+  thumbnails are excluded. Oversized declarations, including 3MF files nested
+  in saved projects, fail with a recovery message and preserve current work.
+
 - **Avoid an extra triangle-buffer copy on import** (2026-10-31). When all
   triangles survive validation, reuse the filter's already exact-sized output.
   Triangle order, independent output storage and degenerate filtering stay
