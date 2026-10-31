@@ -6,7 +6,7 @@ Authorized by Greg on 2026-10-31. Inputs: all eight files in `new-design-system/
 
 A working 3D Measure workspace with the new shell, imported scan, project tree, a fitted-element editor, precise unit-labelled controls, commit/cancel and undo. Use actual scan/fit/session functions, not fake geometry or demo controls. Show desktop and phone layouts plus a runnable local build. Greg's AGENTS rule 16 requires his approval of this finished piece before applying the visual direction to the remaining screens. Independent audits continue while that decision is pending.
 
-Before building: finish work-preservation/access fixes (complete), texture responsiveness fix (published as PR32), and startup/memory baselines (complete). Archive protection is in final verification. Reference rendered and visually inspected in owned headless Chrome at1440×1000 and390×844. Its mobile demo clips Export and hides side panels; production follows the written sheet/access requirements. Fresh-default novice workflow audit completed; see `.gk-docs/reference/novice-workflow.md` for observed gaps and the proposed scanner path.
+Before building: finish work-preservation/access fixes (complete), texture responsiveness fix (published as PR32), and startup/memory baselines (complete). Archive protection is verified and published in PR32. Reference rendered and visually inspected in owned headless Chrome at1440×1000 and390×844. Its mobile demo clips Export and hides side panels; production follows the written sheet/access requirements. Fresh-default novice workflow audit completed; see `.gk-docs/reference/novice-workflow.md` for observed gaps and the proposed scanner path.
 
 ## Coverage
 

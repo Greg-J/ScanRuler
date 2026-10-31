@@ -38,15 +38,15 @@ Maintain the existing measurement product through repeated inspect → reproduce
 
 ```
 Protect work and access       2 / 2
-Measure and reduce overhead   2 / 3
+Measure and reduce overhead   3 / 3
 Inspect workflows and guidance 1 / 2
 Adopt supplied design system  0 / 1
                              ---------
-                             5 / 8 planned tasks
+                             6 / 8 planned tasks
 Discovered                   0 / 0
 ```
 
-Last touched: 2026-10-31; SR01/SR02 published as PR23/PR31; SR03 responsiveness as PR32, with archive-limit disposition open. SR04 complete in6d614f2 after full gate. SR05 complete in ed403c8 after full gate. SR07 runtime assessment complete; full design overhaul remains in scope. Archive guard full gate19691 is live. Native loop active.
+Last touched: 2026-10-31; SR01/SR02 published as PR23/PR31; SR03 responsiveness and archive guard published as PR32 (clean2e0dbd5). SR04/SR05 performance changes checked and pushed to the fork. SR07 runtime assessment complete. SR06 remaining workflow disposition and SR08 full design overhaul are active. No live verification job. Native loop active.
 
 ## Protect work and access
 
@@ -71,12 +71,12 @@ Last touched: 2026-10-31; SR01/SR02 published as PR23/PR31; SR03 responsiveness 
 
 ## Measure and reduce overhead
 
-- [ ] **SR-03** · medium · `src/app/scanFiles.ts:97`, `src/core/parsers/threemf.ts:394`
+- [x] **SR-03** · medium · `src/app/scanFiles.ts:97`, `src/core/parsers/threemf.ts:394`
       3MF texture entries decompress synchronously on the UI thread; archive expansion is not bounded like project archives. This is a source-confirmed risk, not yet a measured stall.
       **Fix:** measure a representative textured 3MF first, then remove demonstrated blocking work and protect allocation from malformed archive metadata using existing format/resource contracts. Preserve colors, image companions, transactional imports and actionable errors. Do not invent arbitrary product tiers or silently reject ordinary supported files. If no material stall is reproduced, document that and limit changes to proven robustness defects.
       **Responsiveness complete:** integration25bbfcf, cleanfb07615, https://github.com/CNCKitchen/ScanRuler/pull/32 verified OPEN/Greg-J/main/exactly9 files. Synthetic4K PNG median UI synchronous extraction1,154.5ms→11ms; timer gap1,157ms→97.7ms. Chrome4x main-thread slowdown does not equally throttle workers; canvas readback remains. Raw metrics `.gk-docs/reference/measurements/3mf-textures.json`; cleaned reproducer ran independently and confirms10.8ms median extraction. Full gate passed3,099unit/123MCP/build/browser suites; private scooter skipped. Clean branch20unit/preflight/build/two browser suites plus five production worker/render/save/reopen assertions passed. All jobs finished.
-      **Robustness in verification:** tiny malformed headers reproduced 2 GiB allocation attempts under a safe VM allocator guard. Complete directory preflight now applies the existing 1 GiB project budget to selected model/config/rels/textures before any expansion, counting stored-entry allocation too; ignored sidecars and thumbnails are excluded. Eight focused archive tests pass. Earlier 7 real browser checks preserve source/scene/worker/measurements/draft/history on oversized model, texture and nested-project imports. Full gate19691 live; update PR32 only after final and isolated checks. Initial gate63509 stopped for the stored-entry correction, not a pass.
-      **Overlap:** https://github.com/CNCKitchen/ScanRuler/pull/28 by Jozkah already proposes limits for both 3MF readers. Reviewed its source; do not duplicate that patch or claim authorship. Responsiveness work is separate and will name the overlap.
+      **Robustness complete:** integration6445fb4 / clean2e0dbd5, published in PR32. Tiny malformed headers reproduced 2 GiB allocation attempts under a safe VM allocator guard. Complete-directory preflight applies the existing 1 GiB project budget to selected model/config/rels/textures before any expansion, including stored-entry size accounting. Unread sidecars/thumbnails excluded; no new member-count/per-entry cap. Eight new unit regressions pass; four initial allocator cases and the later stored-entry case failed before their fixes. Seven real browser checks preserve source/scene/worker/measurement/draft/history. Full gate19691 passed: 3,111 unit, 123 MCP, build, all executable browser suites; private scooter skipped. Isolated branch passed36unit, preflight, build, three browser suites and five production texture/render/save/reopen checks. Allocation evidence in `measurements/3mf-archive.json`. Expanded ZIP bytes are not a total memory or decoded-image budget.
+      **Overlap:** https://github.com/CNCKitchen/ScanRuler/pull/28 by Jozkah already proposes limits for both 3MF readers. Reviewed its source; PR32 explicitly describes the alternative policy and need to reconcile the overlap. No code or authorship taken from PR28.
       refs: `docs/development.md`, `src/core/project/archive.ts`
       **Acceptance:** Same input before/after main-thread blocking and memory observations; real textured import/save/reopen; malformed archive rejection without losing the current project. Do not allocate huge adversarial buffers just to test rejection.
       route: substantial/agentic

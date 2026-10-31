@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-31",
+  "integrationCommit": "6445fb4",
+  "cleanCommit": "2e0dbd5",
+  "before": [
+    {
+      "entry": "src/core/parsers/threemf.ts",
+      "inputBytes": 282,
+      "declaredExpandedBytes": 2147483647,
+      "blockedAllocations": [
+        2147483647
+      ],
+      "error": "This 3MF could not be unzipped \u2014 the file is damaged or not a 3MF.",
+      "returnedNull": false
+    },
+    {
+      "entry": "src/core/parsers/threemfTextures.ts",
+      "inputBytes": 290,
+      "declaredExpandedBytes": 2147483647,
+      "blockedAllocations": [
+        2147483647
+      ],
+      "error": null,
+      "returnedNull": true
+    }
+  ],
+  "method": "Actual bundled fflate behind a VM Uint8Array allocator interceptor that records and refuses allocations above 8 MiB. No declared gigabyte buffers allocated. Baseline four regressions failed: giant individual model/texture declarations and aggregate model+texture budget. A separate stored-entry size undercount regression failed before its correction.",
+  "after": {
+    "archiveUnitTests": 8,
+    "guardedLargeAllocations": 0,
+    "fullUnitTests": 3111,
+    "mcpTests": 123,
+    "build": "passed",
+    "browser": "all executable CI suites passed; private scooter fixture skipped",
+    "cleanUnitTests": 36,
+    "cleanBrowserSuites": [
+      "e2e-3mf-archive",
+      "e2e-textured-3mf",
+      "e2e-import"
+    ],
+    "productionChecks": 5
+  },
+  "policy": "Existing 1 GiB expanded project budget, reused for model/config/rels and textures together; complete directory preflight before expanding selected entries. Stored entries account for both stored and original-size fields. Unread sidecars/thumbnails excluded; no member-count/per-entry restriction.",
+  "limitations": [
+    "Expanded ZIP bytes are not total application/GPU memory.",
+    "Decoded-image dimensions and XML object allocations may require more memory than the ZIP entries.",
+    "Synthetic fixtures and Chrome; no private scanner accuracy or physical hardware claim."
+  ]
+}
