@@ -1,0 +1,1302 @@
+{
+  "date": "2026-10-31",
+  "beforeCommit": "6d614f2",
+  "after": "SR05 pending verification",
+  "method": "STL parse and buildMeshGraph in three fresh Node processes per grid size; includes input and retained source copy. GC before parsing, none forced during pipeline. Peak resident set from process.resourceUsage().maxRSS; typed array allocation counts separately. SHA256 covers exact positions, triangle indices, normals and adjacency. Only this loop benchmark running.",
+  "results": {
+    "before": [
+      {
+        "run": 0,
+        "n": 128,
+        "triangles": 32768,
+        "fileBytes": 1638484,
+        "sourceBytes": 1638484,
+        "parsedBytes": 1179648,
+        "parseMs": 1.2266249999999985,
+        "graphMs": 14.846042,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 53837824,
+            "arrayBuffers": 3293587,
+            "maxRSSKiB": 52576
+          },
+          {
+            "name": "parsed soup",
+            "rss": 55590912,
+            "arrayBuffers": 4473235,
+            "maxRSSKiB": 54288
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 58769408,
+            "arrayBuffers": 8080799,
+            "maxRSSKiB": 57392
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 59768832,
+            "arrayBuffers": 9000363,
+            "maxRSSKiB": 58368
+          },
+          {
+            "name": "graph complete",
+            "rss": 60080128,
+            "arrayBuffers": 6118835,
+            "maxRSSKiB": 58672
+          }
+        ],
+        "vertices": 16641,
+        "sha256": "e5b88bf9aa5523fb6a2eabfec917e8fa84cb8e9c04acf53bfe1aa76a9d81d172"
+      },
+      {
+        "run": 1,
+        "n": 128,
+        "triangles": 32768,
+        "fileBytes": 1638484,
+        "sourceBytes": 1638484,
+        "parsedBytes": 1179648,
+        "parseMs": 1.1858330000000024,
+        "graphMs": 14.783999999999999,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 54165504,
+            "arrayBuffers": 3293587,
+            "maxRSSKiB": 52896
+          },
+          {
+            "name": "parsed soup",
+            "rss": 55836672,
+            "arrayBuffers": 4473235,
+            "maxRSSKiB": 54528
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 59080704,
+            "arrayBuffers": 8080799,
+            "maxRSSKiB": 57696
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 60063744,
+            "arrayBuffers": 9000363,
+            "maxRSSKiB": 58656
+          },
+          {
+            "name": "graph complete",
+            "rss": 60358656,
+            "arrayBuffers": 6118835,
+            "maxRSSKiB": 58944
+          }
+        ],
+        "vertices": 16641,
+        "sha256": "e5b88bf9aa5523fb6a2eabfec917e8fa84cb8e9c04acf53bfe1aa76a9d81d172"
+      },
+      {
+        "run": 2,
+        "n": 128,
+        "triangles": 32768,
+        "fileBytes": 1638484,
+        "sourceBytes": 1638484,
+        "parsedBytes": 1179648,
+        "parseMs": 1.325333999999998,
+        "graphMs": 14.818291000000002,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 54083584,
+            "arrayBuffers": 3293587,
+            "maxRSSKiB": 52816
+          },
+          {
+            "name": "parsed soup",
+            "rss": 55803904,
+            "arrayBuffers": 4473235,
+            "maxRSSKiB": 54496
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 59031552,
+            "arrayBuffers": 8080799,
+            "maxRSSKiB": 57648
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 60014592,
+            "arrayBuffers": 9000363,
+            "maxRSSKiB": 58608
+          },
+          {
+            "name": "graph complete",
+            "rss": 60309504,
+            "arrayBuffers": 6118835,
+            "maxRSSKiB": 58896
+          }
+        ],
+        "vertices": 16641,
+        "sha256": "e5b88bf9aa5523fb6a2eabfec917e8fa84cb8e9c04acf53bfe1aa76a9d81d172"
+      },
+      {
+        "run": 0,
+        "n": 512,
+        "triangles": 524288,
+        "fileBytes": 26214484,
+        "sourceBytes": 26214484,
+        "parsedBytes": 18874368,
+        "parseMs": 5.2663749999999965,
+        "graphMs": 78.715959,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 104513536,
+            "arrayBuffers": 52445587,
+            "maxRSSKiB": 102064
+          },
+          {
+            "name": "parsed soup",
+            "rss": 123912192,
+            "arrayBuffers": 71319955,
+            "maxRSSKiB": 121008
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 166199296,
+            "arrayBuffers": 93352351,
+            "maxRSSKiB": 162304
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 168165376,
+            "arrayBuffers": 108040619,
+            "maxRSSKiB": 164224
+          },
+          {
+            "name": "graph complete",
+            "rss": 171458560,
+            "arrayBuffers": 103854515,
+            "maxRSSKiB": 167440
+          }
+        ],
+        "vertices": 263169,
+        "sha256": "1084b1941ccb6c338fa4bccd712f6108ff0cb204bf7b055d2f459141f7cda446"
+      },
+      {
+        "run": 1,
+        "n": 512,
+        "triangles": 524288,
+        "fileBytes": 26214484,
+        "sourceBytes": 26214484,
+        "parsedBytes": 18874368,
+        "parseMs": 4.907041999999997,
+        "graphMs": 80.04933400000002,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 104513536,
+            "arrayBuffers": 52445587,
+            "maxRSSKiB": 102064
+          },
+          {
+            "name": "parsed soup",
+            "rss": 123895808,
+            "arrayBuffers": 71319955,
+            "maxRSSKiB": 120992
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 166182912,
+            "arrayBuffers": 93352351,
+            "maxRSSKiB": 162288
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 168132608,
+            "arrayBuffers": 108040619,
+            "maxRSSKiB": 164192
+          },
+          {
+            "name": "graph complete",
+            "rss": 171491328,
+            "arrayBuffers": 103854515,
+            "maxRSSKiB": 167472
+          }
+        ],
+        "vertices": 263169,
+        "sha256": "1084b1941ccb6c338fa4bccd712f6108ff0cb204bf7b055d2f459141f7cda446"
+      },
+      {
+        "run": 2,
+        "n": 512,
+        "triangles": 524288,
+        "fileBytes": 26214484,
+        "sourceBytes": 26214484,
+        "parsedBytes": 18874368,
+        "parseMs": 5.009959000000002,
+        "graphMs": 80.42349999999999,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 104742912,
+            "arrayBuffers": 52445587,
+            "maxRSSKiB": 102288
+          },
+          {
+            "name": "parsed soup",
+            "rss": 124125184,
+            "arrayBuffers": 71319955,
+            "maxRSSKiB": 121216
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 166412288,
+            "arrayBuffers": 93352351,
+            "maxRSSKiB": 162512
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 168361984,
+            "arrayBuffers": 108040619,
+            "maxRSSKiB": 164416
+          },
+          {
+            "name": "graph complete",
+            "rss": 171687936,
+            "arrayBuffers": 103854515,
+            "maxRSSKiB": 167664
+          }
+        ],
+        "vertices": 263169,
+        "sha256": "1084b1941ccb6c338fa4bccd712f6108ff0cb204bf7b055d2f459141f7cda446"
+      },
+      {
+        "run": 0,
+        "n": 768,
+        "triangles": 1179648,
+        "fileBytes": 58982484,
+        "sourceBytes": 58982484,
+        "parsedBytes": 42467328,
+        "parseMs": 10.688958,
+        "graphMs": 181.63466599999998,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 170360832,
+            "arrayBuffers": 117981587,
+            "maxRSSKiB": 166368
+          },
+          {
+            "name": "parsed soup",
+            "rss": 213336064,
+            "arrayBuffers": 160448915,
+            "maxRSSKiB": 208336
+          },
+          {
+            "name": "Merging vertices\u2026 59%",
+            "rss": 259768320,
+            "arrayBuffers": 250626451,
+            "maxRSSKiB": 253680
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 304037888,
+            "arrayBuffers": 286034335,
+            "maxRSSKiB": 296912
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 337231872,
+            "arrayBuffers": 214743467,
+            "maxRSSKiB": 329328
+          },
+          {
+            "name": "graph complete",
+            "rss": 337313792,
+            "arrayBuffers": 219474355,
+            "maxRSSKiB": 329408
+          }
+        ],
+        "vertices": 591361,
+        "sha256": "60503b5ac94e9a9621cfbab97c5488794cbb094cc52b888eb86b1cbe23bc9b21"
+      },
+      {
+        "run": 1,
+        "n": 768,
+        "triangles": 1179648,
+        "fileBytes": 58982484,
+        "sourceBytes": 58982484,
+        "parsedBytes": 42467328,
+        "parseMs": 10.100207999999995,
+        "graphMs": 182.651208,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 170360832,
+            "arrayBuffers": 117981587,
+            "maxRSSKiB": 166368
+          },
+          {
+            "name": "parsed soup",
+            "rss": 213385216,
+            "arrayBuffers": 160448915,
+            "maxRSSKiB": 208384
+          },
+          {
+            "name": "Merging vertices\u2026 59%",
+            "rss": 259801088,
+            "arrayBuffers": 250626451,
+            "maxRSSKiB": 253712
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 304037888,
+            "arrayBuffers": 286034335,
+            "maxRSSKiB": 296912
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 337231872,
+            "arrayBuffers": 214743467,
+            "maxRSSKiB": 329328
+          },
+          {
+            "name": "graph complete",
+            "rss": 337313792,
+            "arrayBuffers": 219474355,
+            "maxRSSKiB": 329408
+          }
+        ],
+        "vertices": 591361,
+        "sha256": "60503b5ac94e9a9621cfbab97c5488794cbb094cc52b888eb86b1cbe23bc9b21"
+      },
+      {
+        "run": 2,
+        "n": 768,
+        "triangles": 1179648,
+        "fileBytes": 58982484,
+        "sourceBytes": 58982484,
+        "parsedBytes": 42467328,
+        "parseMs": 9.968125,
+        "graphMs": 181.602958,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 170344448,
+            "arrayBuffers": 117981587,
+            "maxRSSKiB": 166352
+          },
+          {
+            "name": "parsed soup",
+            "rss": 213336064,
+            "arrayBuffers": 160448915,
+            "maxRSSKiB": 208336
+          },
+          {
+            "name": "Merging vertices\u2026 59%",
+            "rss": 259735552,
+            "arrayBuffers": 250626451,
+            "maxRSSKiB": 253648
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 303988736,
+            "arrayBuffers": 286034335,
+            "maxRSSKiB": 296864
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 337182720,
+            "arrayBuffers": 214743467,
+            "maxRSSKiB": 329280
+          },
+          {
+            "name": "graph complete",
+            "rss": 337248256,
+            "arrayBuffers": 219474355,
+            "maxRSSKiB": 329344
+          }
+        ],
+        "vertices": 591361,
+        "sha256": "60503b5ac94e9a9621cfbab97c5488794cbb094cc52b888eb86b1cbe23bc9b21"
+      }
+    ],
+    "after": [
+      {
+        "run": 0,
+        "n": 128,
+        "triangles": 32768,
+        "fileBytes": 1638484,
+        "sourceBytes": 1638484,
+        "parsedBytes": 1179648,
+        "parseMs": 1.200875,
+        "graphMs": 15.027792000000002,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 54099968,
+            "arrayBuffers": 3293587,
+            "maxRSSKiB": 52832
+          },
+          {
+            "name": "parsed soup",
+            "rss": 55803904,
+            "arrayBuffers": 4473235,
+            "maxRSSKiB": 54496
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 58638336,
+            "arrayBuffers": 7687583,
+            "maxRSSKiB": 57264
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 59621376,
+            "arrayBuffers": 8607147,
+            "maxRSSKiB": 58224
+          },
+          {
+            "name": "graph complete",
+            "rss": 59916288,
+            "arrayBuffers": 6118835,
+            "maxRSSKiB": 58512
+          }
+        ],
+        "vertices": 16641,
+        "sha256": "e5b88bf9aa5523fb6a2eabfec917e8fa84cb8e9c04acf53bfe1aa76a9d81d172"
+      },
+      {
+        "run": 1,
+        "n": 128,
+        "triangles": 32768,
+        "fileBytes": 1638484,
+        "sourceBytes": 1638484,
+        "parsedBytes": 1179648,
+        "parseMs": 1.277000000000001,
+        "graphMs": 16.595541000000004,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 54214656,
+            "arrayBuffers": 3293587,
+            "maxRSSKiB": 52944
+          },
+          {
+            "name": "parsed soup",
+            "rss": 55869440,
+            "arrayBuffers": 4473235,
+            "maxRSSKiB": 54560
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 58638336,
+            "arrayBuffers": 7687583,
+            "maxRSSKiB": 57264
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 59637760,
+            "arrayBuffers": 8607147,
+            "maxRSSKiB": 58240
+          },
+          {
+            "name": "graph complete",
+            "rss": 59932672,
+            "arrayBuffers": 6118835,
+            "maxRSSKiB": 58528
+          }
+        ],
+        "vertices": 16641,
+        "sha256": "e5b88bf9aa5523fb6a2eabfec917e8fa84cb8e9c04acf53bfe1aa76a9d81d172"
+      },
+      {
+        "run": 2,
+        "n": 128,
+        "triangles": 32768,
+        "fileBytes": 1638484,
+        "sourceBytes": 1638484,
+        "parsedBytes": 1179648,
+        "parseMs": 1.2850840000000012,
+        "graphMs": 14.942833999999998,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 54083584,
+            "arrayBuffers": 3293587,
+            "maxRSSKiB": 52816
+          },
+          {
+            "name": "parsed soup",
+            "rss": 55836672,
+            "arrayBuffers": 4473235,
+            "maxRSSKiB": 54528
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 58589184,
+            "arrayBuffers": 7687583,
+            "maxRSSKiB": 57216
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 59588608,
+            "arrayBuffers": 8607147,
+            "maxRSSKiB": 58192
+          },
+          {
+            "name": "graph complete",
+            "rss": 59916288,
+            "arrayBuffers": 6118835,
+            "maxRSSKiB": 58512
+          }
+        ],
+        "vertices": 16641,
+        "sha256": "e5b88bf9aa5523fb6a2eabfec917e8fa84cb8e9c04acf53bfe1aa76a9d81d172"
+      },
+      {
+        "run": 0,
+        "n": 512,
+        "triangles": 524288,
+        "fileBytes": 26214484,
+        "sourceBytes": 26214484,
+        "parsedBytes": 18874368,
+        "parseMs": 5.049834000000004,
+        "graphMs": 84.300666,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 104546304,
+            "arrayBuffers": 52445587,
+            "maxRSSKiB": 102096
+          },
+          {
+            "name": "parsed soup",
+            "rss": 123928576,
+            "arrayBuffers": 71319955,
+            "maxRSSKiB": 121024
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 159891456,
+            "arrayBuffers": 87060895,
+            "maxRSSKiB": 156144
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 161857536,
+            "arrayBuffers": 101749163,
+            "maxRSSKiB": 158064
+          },
+          {
+            "name": "graph complete",
+            "rss": 165199872,
+            "arrayBuffers": 103854515,
+            "maxRSSKiB": 161328
+          }
+        ],
+        "vertices": 263169,
+        "sha256": "1084b1941ccb6c338fa4bccd712f6108ff0cb204bf7b055d2f459141f7cda446"
+      },
+      {
+        "run": 1,
+        "n": 512,
+        "triangles": 524288,
+        "fileBytes": 26214484,
+        "sourceBytes": 26214484,
+        "parsedBytes": 18874368,
+        "parseMs": 5.118250000000003,
+        "graphMs": 78.84574999999998,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 104546304,
+            "arrayBuffers": 52445587,
+            "maxRSSKiB": 102096
+          },
+          {
+            "name": "parsed soup",
+            "rss": 123912192,
+            "arrayBuffers": 71319955,
+            "maxRSSKiB": 121008
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 159940608,
+            "arrayBuffers": 87060895,
+            "maxRSSKiB": 156192
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 161906688,
+            "arrayBuffers": 101749163,
+            "maxRSSKiB": 158112
+          },
+          {
+            "name": "graph complete",
+            "rss": 165265408,
+            "arrayBuffers": 98615735,
+            "maxRSSKiB": 161392
+          }
+        ],
+        "vertices": 263169,
+        "sha256": "1084b1941ccb6c338fa4bccd712f6108ff0cb204bf7b055d2f459141f7cda446"
+      },
+      {
+        "run": 2,
+        "n": 512,
+        "triangles": 524288,
+        "fileBytes": 26214484,
+        "sourceBytes": 26214484,
+        "parsedBytes": 18874368,
+        "parseMs": 4.901207999999997,
+        "graphMs": 81.190834,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 104628224,
+            "arrayBuffers": 52445587,
+            "maxRSSKiB": 102176
+          },
+          {
+            "name": "parsed soup",
+            "rss": 123994112,
+            "arrayBuffers": 71319955,
+            "maxRSSKiB": 121088
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 160038912,
+            "arrayBuffers": 87060895,
+            "maxRSSKiB": 156288
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 161988608,
+            "arrayBuffers": 101749163,
+            "maxRSSKiB": 158192
+          },
+          {
+            "name": "graph complete",
+            "rss": 165314560,
+            "arrayBuffers": 103854515,
+            "maxRSSKiB": 161440
+          }
+        ],
+        "vertices": 263169,
+        "sha256": "1084b1941ccb6c338fa4bccd712f6108ff0cb204bf7b055d2f459141f7cda446"
+      },
+      {
+        "run": 0,
+        "n": 768,
+        "triangles": 1179648,
+        "fileBytes": 58982484,
+        "sourceBytes": 58982484,
+        "parsedBytes": 42467328,
+        "parseMs": 9.782375000000002,
+        "graphMs": 184.696375,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 170131456,
+            "arrayBuffers": 117981587,
+            "maxRSSKiB": 166144
+          },
+          {
+            "name": "parsed soup",
+            "rss": 213155840,
+            "arrayBuffers": 160448915,
+            "maxRSSKiB": 208160
+          },
+          {
+            "name": "Merging vertices\u2026 59%",
+            "rss": 259555328,
+            "arrayBuffers": 250626451,
+            "maxRSSKiB": 253472
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 289619968,
+            "arrayBuffers": 271878559,
+            "maxRSSKiB": 282832
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 322797568,
+            "arrayBuffers": 304921003,
+            "maxRSSKiB": 315232
+          },
+          {
+            "name": "graph complete",
+            "rss": 330006528,
+            "arrayBuffers": 219474355,
+            "maxRSSKiB": 322272
+          }
+        ],
+        "vertices": 591361,
+        "sha256": "60503b5ac94e9a9621cfbab97c5488794cbb094cc52b888eb86b1cbe23bc9b21"
+      },
+      {
+        "run": 1,
+        "n": 768,
+        "triangles": 1179648,
+        "fileBytes": 58982484,
+        "sourceBytes": 58982484,
+        "parsedBytes": 42467328,
+        "parseMs": 9.780124999999998,
+        "graphMs": 203.366375,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 170442752,
+            "arrayBuffers": 117981587,
+            "maxRSSKiB": 166448
+          },
+          {
+            "name": "parsed soup",
+            "rss": 213450752,
+            "arrayBuffers": 160448915,
+            "maxRSSKiB": 208448
+          },
+          {
+            "name": "Merging vertices\u2026 59%",
+            "rss": 259850240,
+            "arrayBuffers": 250626451,
+            "maxRSSKiB": 253760
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 289947648,
+            "arrayBuffers": 271878559,
+            "maxRSSKiB": 283152
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 323108864,
+            "arrayBuffers": 304921003,
+            "maxRSSKiB": 315536
+          },
+          {
+            "name": "graph complete",
+            "rss": 330334208,
+            "arrayBuffers": 219474355,
+            "maxRSSKiB": 322592
+          }
+        ],
+        "vertices": 591361,
+        "sha256": "60503b5ac94e9a9621cfbab97c5488794cbb094cc52b888eb86b1cbe23bc9b21"
+      },
+      {
+        "run": 2,
+        "n": 768,
+        "triangles": 1179648,
+        "fileBytes": 58982484,
+        "sourceBytes": 58982484,
+        "parsedBytes": 42467328,
+        "parseMs": 10.332915999999997,
+        "graphMs": 181.63520799999998,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 170278912,
+            "arrayBuffers": 117981587,
+            "maxRSSKiB": 166288
+          },
+          {
+            "name": "parsed soup",
+            "rss": 213319680,
+            "arrayBuffers": 160448915,
+            "maxRSSKiB": 208320
+          },
+          {
+            "name": "Merging vertices\u2026 59%",
+            "rss": 259784704,
+            "arrayBuffers": 250626451,
+            "maxRSSKiB": 253696
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 289849344,
+            "arrayBuffers": 271878559,
+            "maxRSSKiB": 283056
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 322994176,
+            "arrayBuffers": 304921003,
+            "maxRSSKiB": 315424
+          },
+          {
+            "name": "graph complete",
+            "rss": 330203136,
+            "arrayBuffers": 219474355,
+            "maxRSSKiB": 322464
+          }
+        ],
+        "vertices": 591361,
+        "sha256": "60503b5ac94e9a9621cfbab97c5488794cbb094cc52b888eb86b1cbe23bc9b21"
+      }
+    ],
+    "reproducer": [
+      {
+        "run": 0,
+        "n": 128,
+        "triangles": 32768,
+        "fileBytes": 1638484,
+        "sourceBytes": 1638484,
+        "parsedBytes": 1179648,
+        "parseMs": 1.6295420000000007,
+        "graphMs": 19.411958999999996,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 54198272,
+            "arrayBuffers": 3293587,
+            "maxRSSKiB": 52928
+          },
+          {
+            "name": "parsed soup",
+            "rss": 55902208,
+            "arrayBuffers": 4473235,
+            "maxRSSKiB": 54592
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 58736640,
+            "arrayBuffers": 7687583,
+            "maxRSSKiB": 57360
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 59719680,
+            "arrayBuffers": 8607147,
+            "maxRSSKiB": 58320
+          },
+          {
+            "name": "graph complete",
+            "rss": 60047360,
+            "arrayBuffers": 6118835,
+            "maxRSSKiB": 58640
+          }
+        ],
+        "vertices": 16641,
+        "sha256": "e5b88bf9aa5523fb6a2eabfec917e8fa84cb8e9c04acf53bfe1aa76a9d81d172"
+      },
+      {
+        "run": 1,
+        "n": 128,
+        "triangles": 32768,
+        "fileBytes": 1638484,
+        "sourceBytes": 1638484,
+        "parsedBytes": 1179648,
+        "parseMs": 1.686084000000001,
+        "graphMs": 18.638458,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 54247424,
+            "arrayBuffers": 3293587,
+            "maxRSSKiB": 52976
+          },
+          {
+            "name": "parsed soup",
+            "rss": 55984128,
+            "arrayBuffers": 4473235,
+            "maxRSSKiB": 54672
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 58785792,
+            "arrayBuffers": 7687583,
+            "maxRSSKiB": 57408
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 59801600,
+            "arrayBuffers": 8607147,
+            "maxRSSKiB": 58400
+          },
+          {
+            "name": "graph complete",
+            "rss": 60112896,
+            "arrayBuffers": 6118835,
+            "maxRSSKiB": 58704
+          }
+        ],
+        "vertices": 16641,
+        "sha256": "e5b88bf9aa5523fb6a2eabfec917e8fa84cb8e9c04acf53bfe1aa76a9d81d172"
+      },
+      {
+        "run": 2,
+        "n": 128,
+        "triangles": 32768,
+        "fileBytes": 1638484,
+        "sourceBytes": 1638484,
+        "parsedBytes": 1179648,
+        "parseMs": 1.5407080000000022,
+        "graphMs": 18.890209,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 54165504,
+            "arrayBuffers": 3293587,
+            "maxRSSKiB": 52896
+          },
+          {
+            "name": "parsed soup",
+            "rss": 55869440,
+            "arrayBuffers": 4473235,
+            "maxRSSKiB": 54560
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 58703872,
+            "arrayBuffers": 7687583,
+            "maxRSSKiB": 57328
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 59719680,
+            "arrayBuffers": 8607147,
+            "maxRSSKiB": 58320
+          },
+          {
+            "name": "graph complete",
+            "rss": 60014592,
+            "arrayBuffers": 6118835,
+            "maxRSSKiB": 58608
+          }
+        ],
+        "vertices": 16641,
+        "sha256": "e5b88bf9aa5523fb6a2eabfec917e8fa84cb8e9c04acf53bfe1aa76a9d81d172"
+      },
+      {
+        "run": 0,
+        "n": 512,
+        "triangles": 524288,
+        "fileBytes": 26214484,
+        "sourceBytes": 26214484,
+        "parsedBytes": 18874368,
+        "parseMs": 6.1037079999999975,
+        "graphMs": 117.55037499999999,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 104857600,
+            "arrayBuffers": 52445587,
+            "maxRSSKiB": 102400
+          },
+          {
+            "name": "parsed soup",
+            "rss": 124207104,
+            "arrayBuffers": 71319955,
+            "maxRSSKiB": 121296
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 160153600,
+            "arrayBuffers": 87060895,
+            "maxRSSKiB": 156400
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 162152448,
+            "arrayBuffers": 101749163,
+            "maxRSSKiB": 158352
+          },
+          {
+            "name": "graph complete",
+            "rss": 165478400,
+            "arrayBuffers": 103854515,
+            "maxRSSKiB": 161600
+          }
+        ],
+        "vertices": 263169,
+        "sha256": "1084b1941ccb6c338fa4bccd712f6108ff0cb204bf7b055d2f459141f7cda446"
+      },
+      {
+        "run": 1,
+        "n": 512,
+        "triangles": 524288,
+        "fileBytes": 26214484,
+        "sourceBytes": 26214484,
+        "parsedBytes": 18874368,
+        "parseMs": 5.397958000000003,
+        "graphMs": 115.75266700000002,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 104677376,
+            "arrayBuffers": 52445587,
+            "maxRSSKiB": 102224
+          },
+          {
+            "name": "parsed soup",
+            "rss": 124026880,
+            "arrayBuffers": 71319955,
+            "maxRSSKiB": 121120
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 160006144,
+            "arrayBuffers": 87060895,
+            "maxRSSKiB": 156256
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 162004992,
+            "arrayBuffers": 101749163,
+            "maxRSSKiB": 158208
+          },
+          {
+            "name": "graph complete",
+            "rss": 165363712,
+            "arrayBuffers": 103854515,
+            "maxRSSKiB": 161488
+          }
+        ],
+        "vertices": 263169,
+        "sha256": "1084b1941ccb6c338fa4bccd712f6108ff0cb204bf7b055d2f459141f7cda446"
+      },
+      {
+        "run": 2,
+        "n": 512,
+        "triangles": 524288,
+        "fileBytes": 26214484,
+        "sourceBytes": 26214484,
+        "parsedBytes": 18874368,
+        "parseMs": 5.602499999999992,
+        "graphMs": 114.692,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 104611840,
+            "arrayBuffers": 52445587,
+            "maxRSSKiB": 102160
+          },
+          {
+            "name": "parsed soup",
+            "rss": 123977728,
+            "arrayBuffers": 71319955,
+            "maxRSSKiB": 121072
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 160055296,
+            "arrayBuffers": 87060895,
+            "maxRSSKiB": 156304
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 162004992,
+            "arrayBuffers": 101749163,
+            "maxRSSKiB": 158208
+          },
+          {
+            "name": "graph complete",
+            "rss": 165347328,
+            "arrayBuffers": 103854515,
+            "maxRSSKiB": 161472
+          }
+        ],
+        "vertices": 263169,
+        "sha256": "1084b1941ccb6c338fa4bccd712f6108ff0cb204bf7b055d2f459141f7cda446"
+      },
+      {
+        "run": 0,
+        "n": 768,
+        "triangles": 1179648,
+        "fileBytes": 58982484,
+        "sourceBytes": 58982484,
+        "parsedBytes": 42467328,
+        "parseMs": 12.131582999999992,
+        "graphMs": 267.746959,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 170459136,
+            "arrayBuffers": 117981587,
+            "maxRSSKiB": 166464
+          },
+          {
+            "name": "parsed soup",
+            "rss": 213401600,
+            "arrayBuffers": 160448915,
+            "maxRSSKiB": 208400
+          },
+          {
+            "name": "Merging vertices\u2026 59%",
+            "rss": 259883008,
+            "arrayBuffers": 250626451,
+            "maxRSSKiB": 253792
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 289964032,
+            "arrayBuffers": 271878559,
+            "maxRSSKiB": 283168
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 323108864,
+            "arrayBuffers": 304921003,
+            "maxRSSKiB": 315536
+          },
+          {
+            "name": "graph complete",
+            "rss": 330399744,
+            "arrayBuffers": 219474355,
+            "maxRSSKiB": 322656
+          }
+        ],
+        "vertices": 591361,
+        "sha256": "60503b5ac94e9a9621cfbab97c5488794cbb094cc52b888eb86b1cbe23bc9b21"
+      },
+      {
+        "run": 1,
+        "n": 768,
+        "triangles": 1179648,
+        "fileBytes": 58982484,
+        "sourceBytes": 58982484,
+        "parsedBytes": 42467328,
+        "parseMs": 12.556083999999998,
+        "graphMs": 268.48116699999997,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 170344448,
+            "arrayBuffers": 117981587,
+            "maxRSSKiB": 166352
+          },
+          {
+            "name": "parsed soup",
+            "rss": 213352448,
+            "arrayBuffers": 160448915,
+            "maxRSSKiB": 208352
+          },
+          {
+            "name": "Merging vertices\u2026 59%",
+            "rss": 259833856,
+            "arrayBuffers": 250626451,
+            "maxRSSKiB": 253744
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 289882112,
+            "arrayBuffers": 271878559,
+            "maxRSSKiB": 283088
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 323043328,
+            "arrayBuffers": 304921003,
+            "maxRSSKiB": 315472
+          },
+          {
+            "name": "graph complete",
+            "rss": 330285056,
+            "arrayBuffers": 219474355,
+            "maxRSSKiB": 322544
+          }
+        ],
+        "vertices": 591361,
+        "sha256": "60503b5ac94e9a9621cfbab97c5488794cbb094cc52b888eb86b1cbe23bc9b21"
+      },
+      {
+        "run": 2,
+        "n": 768,
+        "triangles": 1179648,
+        "fileBytes": 58982484,
+        "sourceBytes": 58982484,
+        "parsedBytes": 42467328,
+        "parseMs": 11.655124999999998,
+        "graphMs": 261.249958,
+        "stages": [
+          {
+            "name": "input + retained source",
+            "rss": 170442752,
+            "arrayBuffers": 117981587,
+            "maxRSSKiB": 166448
+          },
+          {
+            "name": "parsed soup",
+            "rss": 213450752,
+            "arrayBuffers": 160448915,
+            "maxRSSKiB": 208448
+          },
+          {
+            "name": "Merging vertices\u2026 59%",
+            "rss": 259866624,
+            "arrayBuffers": 250626451,
+            "maxRSSKiB": 253776
+          },
+          {
+            "name": "Building surface topology\u2026",
+            "rss": 289931264,
+            "arrayBuffers": 271878559,
+            "maxRSSKiB": 283136
+          },
+          {
+            "name": "Computing normals\u2026",
+            "rss": 323092480,
+            "arrayBuffers": 304921003,
+            "maxRSSKiB": 315520
+          },
+          {
+            "name": "graph complete",
+            "rss": 330334208,
+            "arrayBuffers": 219474355,
+            "maxRSSKiB": 322592
+          }
+        ],
+        "vertices": 591361,
+        "sha256": "60503b5ac94e9a9621cfbab97c5488794cbb094cc52b888eb86b1cbe23bc9b21"
+      }
+    ]
+  },
+  "medians": [
+    {
+      "grid": 128,
+      "before": {
+        "peakMiB": 57.515625,
+        "parseMs": 1.2266249999999985,
+        "graphMs": 14.818291000000002
+      },
+      "after": {
+        "peakMiB": 57.140625,
+        "parseMs": 1.277000000000001,
+        "graphMs": 15.027792000000002
+      }
+    },
+    {
+      "grid": 512,
+      "before": {
+        "peakMiB": 163.546875,
+        "parseMs": 5.009959000000002,
+        "graphMs": 80.04933400000002
+      },
+      "after": {
+        "peakMiB": 157.609375,
+        "parseMs": 5.049834000000004,
+        "graphMs": 81.190834
+      }
+    },
+    {
+      "grid": 768,
+      "before": {
+        "peakMiB": 321.6875,
+        "parseMs": 10.100207999999995,
+        "graphMs": 181.63466599999998
+      },
+      "after": {
+        "peakMiB": 314.90625,
+        "parseMs": 9.782375000000002,
+        "graphMs": 184.696375
+      }
+    }
+  ],
+  "limitations": [
+    "Synthetic planar grids, not private scanner scans.",
+    "One-process import-core model, not the full browser/GPU footprint.",
+    "No measured speed improvement; keep claim to a small memory reduction."
+  ]
+}

@@ -38,15 +38,15 @@ Maintain the existing measurement product through repeated inspect → reproduce
 
 ```
 Protect work and access       2 / 2
-Measure and reduce overhead   0 / 3
+Measure and reduce overhead   1 / 3
 Inspect workflows and guidance 0 / 2
 Adopt supplied design system  0 / 1
                              ---------
-                             2 / 8 planned tasks
+                             3 / 8 planned tasks
 Discovered                   0 / 0
 ```
 
-Last touched: 2026-10-31; SR01 and SR02 published as PR23 and PR31 under Greg-J. Full gates and isolated validation passed. SR03 responsiveness fix published as PR32 after full/isolated/production verification. Archive-limit disposition remains open. Upstream PR28 already proposes archive expansion protection. Native loop remains active.
+Last touched: 2026-10-31; SR01/SR02 published as PR23/PR31; SR03 responsiveness as PR32, with archive-limit disposition open. SR04 complete in6d614f2 after full gate. SR05 small measured memory improvement in full gate79613. Guided-workflow assessment and full design overhaul remain in scope. Native loop active.
 
 ## Protect work and access
 
@@ -81,9 +81,10 @@ Last touched: 2026-10-31; SR01 and SR02 published as PR23 and PR31 under Greg-J.
       **Acceptance:** Same input before/after main-thread blocking and memory observations; real textured import/save/reopen; malformed archive rejection without losing the current project. Do not allocate huge adversarial buffers just to test rejection.
       route: substantial/agentic
 
-- [ ] **SR-04** · medium · `src/plugins/registry.ts:14`
+- [x] **SR-04** · medium · `src/plugins/registry.ts:14`
       The baseline main JS bundle is 3.61 MB raw / 1.15 MB gzip and eagerly imports plugin entries. A user-visible startup improvement has not yet been measured.
       **Fix:** measure cold-start resource loading and usable-interface latency on an identical constrained test profile. Only split code when measurements show a worthwhile improvement, preserving workspace registration, hooks, command availability, project restore and headless/plugin-free modes. No framework migration or rewrite. A measured no-change conclusion is acceptable.
+      **Complete:** `FILLET_TRY_MS` imported from the heavy CAD builder forced it into the initial page chunk. Moving the unchanged constant to existing `buildTypes.ts` reduces entry gzip 1,154,114 → 1,090,393 bytes. Cold usable UI median 2032.4 → 1954 ms (three runs each, 4x main-thread CPU slowdown, gzip, 1 MB/s, 100 ms latency); plugins=none 1987.5 → 1922.9 ms. Raw data in `.gk-docs/reference/measurements/startup.json`. No plugin lifecycle rewrite. Actual production bundle-graph regression fails before and passes after; 13 focused tests/build pass. Full gate passed: 3,100 unit tests, 123 MCP, build and all executable browser suites (private scooter skipped). Commit 6d614f2. Portable benchmark executed successfully after the gate. Performance-only change stays on Greg's fork.
       refs: `docs/development.md`, `plugins/README.md`
       **Acceptance:** Record identical before/after transfer and startup metrics, first workspace activation, saved-project opening, plugins=none and agent command behavior. The existing production exporter-laziness test must stay green.
       route: substantial/agentic
@@ -91,6 +92,7 @@ Last touched: 2026-10-31; SR01 and SR02 published as PR23 and PR31 under Greg-J.
 - [ ] **SR-05** · medium · `src/core/parsers/stl.ts`, `src/core/geometry/weld.ts`, `src/app/imports.ts`
       Source accounting estimates roughly 804 MB of input/welding buffers for a 250 MB, five-million-triangle STL before later geometry allocations; actual peak memory has not been measured.
       **Fix:** profile generated meshes of increasing size without exhausting this shared Mac. Reduce a proven redundant allocation or copy only if it produces a meaningful memory/time reduction while preserving exact geometry and failure recovery. Do not reduce input precision, fit fidelity, tolerances or rendering resolution to improve the score. Otherwise retain the implementation and report the evidence.
+      **In progress:** bounded parse/graph profiles at 32,768/524,288/1,179,648 triangles, three fresh Node processes each. Removing the redundant final index copy when all triangles survive reduces peak RSS medians 57.52→57.14, 163.55→157.61 and 321.69→314.91 MiB. All position/index/normal/adjacency hashes match. This is a small memory gain; no speed improvement, and it excludes full browser/GPU memory. Reproducer and raw JSON saved. Focused26 tests pass; full gate LIVE79613. No algorithm rewrite or precision reduction.
       refs: `docs/development.md`, `CONTRIBUTING.md`
       **Acceptance:** Same inputs before/after peak-memory and import-time measurements; topology, measurements, save/reopen, signed-zero regressions and interrupted/failed import safety remain correct. One benchmark at a time.
       route: substantial/agentic
