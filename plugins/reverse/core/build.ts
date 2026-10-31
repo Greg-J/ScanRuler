@@ -36,7 +36,7 @@ import { constrainCylinder, constrainPlane, cylinderPatch, planePatch, type Cons
 import { surfaceOfMeshes } from './liveMap'
 import { describeEdge, describeFace, edgeDistance, faceDistance, matchEdge, matchFace, matchTolerance, type MatchTolerance, splitEdges, tangentChain, type EdgeFingerprint, type FaceFingerprint } from './topo'
 import { livePicks, runStoredWhere, sharpBySurfaces, type StoredPick, whereWords } from './where'
-import { type Body, bodyBrief, type BodyCheck, type BodyStep, boxesMeet, type BuildResult, type BuildSteps, type BuiltBody, type Diagnosis, diagonalOf, type EdgeBrief, type EdgeInfo, type FaceInfo, type FeatureResult, type FilletTries, type FilletTry, halton, type KeptBuild, type Look, meshBox, meshDeflection, type Overlap, pickEach, type PlacedSketch, type PrefixNode, type PreviewResult, type PreviewStep, type RoundTrip, type RoundTripFind, type SketchStep, type Snapshot, type SolidStep, SPLIT_SAMPLES, stepKeys, surfaceMeshDeflection, SURFACE_TRIANGLES, type OffScanReport, type SurfaceReport, type TrimReport } from './buildTypes'
+import { FILLET_TRY_MS, type Body, bodyBrief, type BodyCheck, type BodyStep, boxesMeet, type BuildResult, type BuildSteps, type BuiltBody, type Diagnosis, diagonalOf, type EdgeBrief, type EdgeInfo, type FaceInfo, type FeatureResult, type FilletTries, type FilletTry, halton, type KeptBuild, type Look, meshBox, meshDeflection, type Overlap, pickEach, type PlacedSketch, type PrefixNode, type PreviewResult, type PreviewStep, type RoundTrip, type RoundTripFind, type SketchStep, type Snapshot, type SolidStep, SPLIT_SAMPLES, stepKeys, surfaceMeshDeflection, SURFACE_TRIANGLES, type OffScanReport, type SurfaceReport, type TrimReport } from './buildTypes'
 import { cylinderSolid, primitiveSolid } from './primitives'
 import { extrudeUpTo, fuseAll, outlineOf, reachAlong, taperedPrism, taperLimitOf, taperRefusal, trimByPlanes } from './buildExtrude'
 import { NOTHING, noteRead, ReadMap, readsStand, ReadSet, replay, type StateName, type StepReads } from './buildReads'
@@ -59,7 +59,7 @@ import { cutElsewhereWords, cutsElsewhere } from './cutElsewhere'
 import { ScanPaths } from '../../../src/core/geometry/scanPath'
 import { type NetworkBodies, type NetworkReading, readNetwork } from './network'
 import { emptyReport, networkBody, networkGhost, type NetworkReport } from './networkBody'
-export { type BodyBrief, type BodyCheck, type BodyStep, type BuildResult, type BuildSteps, type BuiltBody, type Diagnosis, type EdgeBrief, type EdgeInfo, type FaceInfo, type FeatureResult, type FilletTries, type FilletTry, type Overlap, type PreviewResult, type PreviewStep, type SketchStep, type SolidStep, stepKeys, type SurfaceReport, type TrimReport } from './buildTypes'
+export { FILLET_TRY_MS, type BodyBrief, type BodyCheck, type BodyStep, type BuildResult, type BuildSteps, type BuiltBody, type Diagnosis, type EdgeBrief, type EdgeInfo, type FaceInfo, type FeatureResult, type FilletTries, type FilletTry, type Overlap, type PreviewResult, type PreviewStep, type SketchStep, type SolidStep, stepKeys, type SurfaceReport, type TrimReport } from './buildTypes'
 
 /** How far out of the face a hole drilled into one starts, mm. */
 const HOLE_LEAD_MM = 0.01
@@ -113,10 +113,6 @@ const ROUND_TRIP_FIND_MS = 30_000
 /** A failure's note on what changed since it built names this many features
  *  at most (withChangesSaid). */
 const CHANGES_NAMED = 5
-
-/** How long filletTry goes on beginning sizes, ms: under the client's limit
- *  on a heavy request, for one size more may run past it. */
-export const FILLET_TRY_MS = 240_000
 
 /** How many odd edges a body check keeps (the counts count all). */
 const ODD_EDGES_KEPT = 50

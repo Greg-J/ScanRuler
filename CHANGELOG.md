@@ -7,6 +7,11 @@ saves carry the same number as `appVersion`. How a release is cut is in
 
 ## Unreleased
 
+- **Keep CAD build code out of initial page loading** (2026-10-31). The
+  fillet-try timeout now lives with the builder's lightweight shared types,
+  so reading it no longer pulls the CAD builder into the page bundle.
+  The timeout value, worker behavior and command contracts are unchanged.
+
 - **Keep 3MF texture extraction off the UI thread** (2026-10-31). Packed
   images now expand in a short-lived worker, so large textured scans do
   not freeze interaction during decompression. Original archive bytes and

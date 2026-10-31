@@ -9,8 +9,8 @@ import { invalid } from '../../../src/commands/core/common'
 import { arr, num, obj } from '../../../src/commands/schema'
 import { errorMessage } from '../../../src/commands/types'
 import { type Command, CommandError } from '../../../src/plugins/api'
-import { FILLET_TRY_MS } from '../core/build'
-import type { FilletTry } from '../core/buildTypes'
+// Share the timeout without making the page load the CAD builder.
+import { FILLET_TRY_MS, type FilletTry } from '../core/buildTypes'
 import { featureNamed, re, ready, type Ref } from './reCommandCore'
 import { featureRef } from './reSchemas'
 

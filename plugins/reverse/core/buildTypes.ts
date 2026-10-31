@@ -20,6 +20,10 @@ import type { StepBetween } from './stepsBetween'
 import type { Stray, SurfaceFitResult } from './surfaceFit'
 import { type EdgeFingerprint, type FaceFingerprint, matchTolerance } from './topo'
 
+/** How long filletTry goes on beginning sizes, ms: under the client's limit
+ *  on a heavy request, for one size more may run past it. */
+export const FILLET_TRY_MS = 240_000
+
 /** A feature step that makes a solid of its own from profiles. */
 export type SolidStep = Extract<BuildStep, { kind: 'extrude' | 'revolve' }>
 
