@@ -7,6 +7,11 @@ saves carry the same number as `appVersion`. How a release is cut is in
 
 ## Unreleased
 
+- **Keep keyboard focus in dialogs** (2026-10-31). Settings, units, agent
+  consent, support and imprint windows now take focus, keep Tab inside, and
+  return focus when closed. Escape closes only the top window, leaving
+  background editors and popovers alone.
+
 - **Confirm replacement imports** (2026-10-31). Opening a scan, image or
   reference now asks before replacing work or clearing undo and redo. Cancel
   keeps the current sources and measurements, including unfinished picks.

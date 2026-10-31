@@ -6,6 +6,7 @@
 // every STL from here on — Settings → Files brings the question back.
 
 import { useEffect, useState } from 'react'
+import { Modal } from './Modal'
 import { MESH_UNITS, type MeshUnits } from '../core/meshUnits'
 import { usePrefs } from '../state/prefsStore'
 import { useUnitsPrompt } from '../state/unitsPromptStore'
@@ -27,36 +28,12 @@ export function UnitsModal() {
     setRemember(false)
   }, [request])
 
-  // Escape dismisses, Enter opens unless a focused control has its own
-  // activation (Cancel, a unit button, or Open). Capture both keys so the
-  // workspace behind never sees them, but retain native control activation.
-  useEffect(() => {
-    if (!request) return
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        e.stopPropagation()
-        cancel()
-      } else if (e.key === 'Enter') {
-        e.stopPropagation()
-        const target = e.target
-        if (!(target instanceof Element && target.closest('button, input, select, textarea, a, [contenteditable]'))) {
-          e.preventDefault()
-          answer(units, remember)
-        }
-      }
-    }
-    window.addEventListener('keydown', onKey, true)
-    return () => window.removeEventListener('keydown', onKey, true)
-  }, [request, units, remember, answer, cancel])
-
   if (!request) return null
   return (
-    <div className="modalback" onClick={cancel}>
+    <Modal labelledBy="units-title" onClose={cancel} initialFocus="[data-test=units-open]" onEnter={() => answer(units, remember)}>
       <div
         className="modal units"
         data-test="units-modal"
-        role="dialog"
-        aria-labelledby="units-title"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="modalhead">
@@ -105,6 +82,6 @@ export function UnitsModal() {
           </button>
         </div>
       </div>
-    </div>
+    </Modal>
   )
 }
