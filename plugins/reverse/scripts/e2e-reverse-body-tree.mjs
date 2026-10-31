@@ -182,9 +182,12 @@ await page.screenshot({ path: shotPath('reverse-body-tree-end.png') })
 const picks = () => re(() => window.__re.store.getState().listSelection)
 const rowName = (body) => `[data-test=body-row][data-body="${body}"] [data-test=body-name]`
 const ctrlClick = async (sel) => {
-  await page.keyboard.down('Control')
-  await page.click(sel)
-  await page.keyboard.up('Control')
+  // Control-click opens the context menu on macOS; additive selection there
+  // uses Command, which the body list supports alongside Control.
+  const modifier = process.platform === 'darwin' ? 'Meta' : 'Control'
+  await page.keyboard.down(modifier)
+  try { await page.click(sel) }
+  finally { await page.keyboard.up(modifier) }
 }
 const shiftClick = async (sel) => {
   await page.keyboard.down('Shift')
