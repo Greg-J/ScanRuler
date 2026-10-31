@@ -11,6 +11,8 @@ This fork has no approved deployment. Never run `npm run deploy`, wrangler deplo
 
 ## Run
 
+The native task loop is the active executor as of 2026-10-31. It works sequentially in this checkout and commits/pushes checked work to the automation branch. Do not start gk run concurrently. The Greenskeeper-specific instructions below describe a future migration, not the current worker. Global skill-link restoration is not needed for the native executor.
+
 Start from `automation/scanruler-improvements` after `gk doctor` and the manifest verify command pass. Use one sequential Codex executor, subscription capacity only; do not opt into paid fallback or start other helpers. Use isolated headless browsers with fresh profiles and owned ephemeral servers. Existing tabs, dev servers and profiles are off limits.
 
 `gk run status` and `gk run ledger` read progress; `gk run stop` finishes the current pass and stops. The supervisor owns its isolated worktrees and pushes the automation branch at pass boundaries. The Claude write hook is registered, but Codex follows ownership by convention, not hook enforcement.

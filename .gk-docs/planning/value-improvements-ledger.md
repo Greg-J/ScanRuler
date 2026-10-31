@@ -10,7 +10,7 @@ Maintain the existing measurement product through repeated inspect → reproduce
 ## How to work this list
 
 1. Protect work first, then keyboard access, then responsiveness. Finish the selected item before searching for more. No new features, redesigns, preferences, vendors or unrelated refactors.
-2. One item at a time, with a scoped commit and its ledger evidence. Record which product paths belong in an upstream patch. The supervisor owns the isolated worktree, branch promotion and automatic pushing; do not change the source checkout or its branch. Never add work to PR #22.
+2. One item at a time, with a scoped commit and its ledger evidence. Record which product paths belong in an upstream patch. The native task loop currently owns this checkout and automation branch; commit and push verified work directly. No gk supervisor is running. If later migrated to gk run, its isolated-worktree/promotion rules apply instead. Never add work to PR #22.
 3. Gate every change with `.greenskeeper.json`'s verify command, verbatim. The command is `bash scripts/prepare-verification.sh && npm test -- --maxWorkers=2 && npm --prefix mcp test && npm run build && npm run e2e:ci`. Also run the item's regression through its real user/agent entry point. Reproduce before repair, keep original assertions and tolerances, and require the new regression to fail without the fix. A red gate requires diagnosing and reverting the unverified edit before moving on; record the cause. Never weaken a test, scene or gate.
 4. Tick completed boxes and update Status in the same commit. Record before/after evidence and verification limits. No blanket claims that a feature works because a unit test passed.
 5. Add discovered defects in causal order using the next SR id, with source/behavior evidence, a bounded repair and a real proof. A hypothesis is not a repair task. If a performance investigation finds no material benefit, record the measured no-change result and finish the investigation without inventing a patch. Do not hunt findings instead of completing planned items.
@@ -45,7 +45,7 @@ Inspect remaining workflows   0 / 1
 Discovered                   0 / 0
 ```
 
-Last touched: setup, not started.
+Last touched: 2026-10-31; native task loop active, global verification running before SR-01.
 
 ## Protect work and access
 
@@ -107,3 +107,5 @@ None yet.
 ## Run log
 
 2026-10-31: Seeded from the completed review. PR #22 is ready under Greg-J. Setup is checking the browser harness and full gate. The runner has not started.
+
+2026-10-31: Native task loop activated after Greenskeeper doctor required missing global skill links. No global links were installed; gk run remains stopped. Missing-link approval is no longer required. Commit 2ceaafe repairs native input simulation; the two previously failing browser suites pass unchanged assertions.
