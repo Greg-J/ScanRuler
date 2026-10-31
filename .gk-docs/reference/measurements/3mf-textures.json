@@ -1,0 +1,365 @@
+{
+  "date": "2026-10-31",
+  "method": "Generated deterministic RGB gradient plus seeded noise; PNG levels 6 and 0; ZIP default deflate. Three sequential runs, owned headless Chrome, 4x main-thread CPU slowdown. Worker scheduling is not CPU-throttled by this CDP setting. Same texture bytes and model, ZIP timestamps may differ. No other benchmark or suite running.",
+  "beforeCommit": "d2749e9",
+  "after": "25bbfcf (integration); fb07615 (isolated upstream patch)",
+  "before": [
+    {
+      "size": 2048,
+      "pngLevel": 6,
+      "pngBytes": 8508506,
+      "archiveBytes": 8461595,
+      "cpuSlowdown": 4,
+      "results": [
+        {
+          "syncMs": 215.20000000298023,
+          "totalMs": 283.20000000298023,
+          "maxTimerGapMs": 217.59999999403954,
+          "images": 1,
+          "width": 2048,
+          "rgbaBytes": 16777216,
+          "pixel": [
+            11,
+            11,
+            11,
+            255
+          ]
+        },
+        {
+          "syncMs": 238.20000000298023,
+          "totalMs": 284.90000000596046,
+          "maxTimerGapMs": 239.90000000596046,
+          "images": 1,
+          "width": 2048,
+          "rgbaBytes": 16777216,
+          "pixel": [
+            11,
+            11,
+            11,
+            255
+          ]
+        },
+        {
+          "syncMs": 235.79999999701977,
+          "totalMs": 293.1000000089407,
+          "maxTimerGapMs": 237.40000000596046,
+          "images": 1,
+          "width": 2048,
+          "rgbaBytes": 16777216,
+          "pixel": [
+            11,
+            11,
+            11,
+            255
+          ]
+        }
+      ]
+    },
+    {
+      "size": 4096,
+      "pngLevel": 6,
+      "pngBytes": 40782547,
+      "archiveBytes": 40547877,
+      "cpuSlowdown": 4,
+      "results": [
+        {
+          "syncMs": 1154.5,
+          "totalMs": 1390.5,
+          "maxTimerGapMs": 1157,
+          "images": 1,
+          "width": 4096,
+          "rgbaBytes": 67108864,
+          "pixel": [
+            11,
+            11,
+            11,
+            255
+          ]
+        },
+        {
+          "syncMs": 1166.7999999970198,
+          "totalMs": 1375.0999999940395,
+          "maxTimerGapMs": 1169.2000000029802,
+          "images": 1,
+          "width": 4096,
+          "rgbaBytes": 67108864,
+          "pixel": [
+            11,
+            11,
+            11,
+            255
+          ]
+        },
+        {
+          "syncMs": 1119.2999999970198,
+          "totalMs": 1340.699999988079,
+          "maxTimerGapMs": 1121.5,
+          "images": 1,
+          "width": 4096,
+          "rgbaBytes": 67108864,
+          "pixel": [
+            11,
+            11,
+            11,
+            255
+          ]
+        }
+      ]
+    },
+    {
+      "size": 4096,
+      "pngLevel": 0,
+      "pngBytes": 50343487,
+      "archiveBytes": 30120536,
+      "cpuSlowdown": 4,
+      "results": [
+        {
+          "syncMs": 1233.1000000089407,
+          "totalMs": 1363.7000000029802,
+          "maxTimerGapMs": 1235.5,
+          "images": 1,
+          "width": 4096,
+          "rgbaBytes": 67108864,
+          "pixel": [
+            11,
+            11,
+            11,
+            255
+          ]
+        },
+        {
+          "syncMs": 1253.5,
+          "totalMs": 1368,
+          "maxTimerGapMs": 1255.0999999940395,
+          "images": 1,
+          "width": 4096,
+          "rgbaBytes": 67108864,
+          "pixel": [
+            11,
+            11,
+            11,
+            255
+          ]
+        },
+        {
+          "syncMs": 1202.6000000089407,
+          "totalMs": 1314.2999999970198,
+          "maxTimerGapMs": 1204.7999999970198,
+          "images": 1,
+          "width": 4096,
+          "rgbaBytes": 67108864,
+          "pixel": [
+            11,
+            11,
+            11,
+            255
+          ]
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Synthetic textures, not private scanner scans.",
+    "Main-thread canvas image readback remains; this change removes ZIP extraction blocking only.",
+    "No Safari/Firefox or hardware testing."
+  ],
+  "median": [
+    {
+      "size": 2048,
+      "pngLevel": 6,
+      "before": {
+        "syncMs": 235.79999999701977,
+        "totalMs": 284.90000000596046,
+        "maxTimerGapMs": 237.40000000596046
+      },
+      "after": {
+        "syncMs": 3,
+        "totalMs": 125.90000000596046,
+        "maxTimerGapMs": 30.799999997019768
+      }
+    },
+    {
+      "size": 4096,
+      "pngLevel": 6,
+      "before": {
+        "syncMs": 1154.5,
+        "totalMs": 1375.0999999940395,
+        "maxTimerGapMs": 1157
+      },
+      "after": {
+        "syncMs": 11,
+        "totalMs": 487.80000001192093,
+        "maxTimerGapMs": 97.69999998807907
+      }
+    },
+    {
+      "size": 4096,
+      "pngLevel": 0,
+      "before": {
+        "syncMs": 1233.1000000089407,
+        "totalMs": 1363.7000000029802,
+        "maxTimerGapMs": 1235.5
+      },
+      "after": {
+        "syncMs": 8.100000008940697,
+        "totalMs": 417.29999999701977,
+        "maxTimerGapMs": 75.20000000298023
+      }
+    }
+  ],
+  "isolatedReproducerCheck": [
+    {
+      "size": 2048,
+      "pngLevel": 6,
+      "pngBytes": 8508506,
+      "archiveBytes": 8461608,
+      "cpuSlowdown": 4,
+      "results": [
+        {
+          "syncMs": 5.200000002980232,
+          "totalMs": 137.59999999403954,
+          "maxTimerGapMs": 44.29999999701977,
+          "images": 1,
+          "width": 2048,
+          "rgbaBytes": 16777216,
+          "pixel": [
+            11,
+            11,
+            11,
+            255
+          ]
+        },
+        {
+          "syncMs": 2.699999988079071,
+          "totalMs": 131,
+          "maxTimerGapMs": 29,
+          "images": 1,
+          "width": 2048,
+          "rgbaBytes": 16777216,
+          "pixel": [
+            11,
+            11,
+            11,
+            255
+          ]
+        },
+        {
+          "syncMs": 3.4000000059604645,
+          "totalMs": 114.1000000089407,
+          "maxTimerGapMs": 19.80000001192093,
+          "images": 1,
+          "width": 2048,
+          "rgbaBytes": 16777216,
+          "pixel": [
+            11,
+            11,
+            11,
+            255
+          ]
+        }
+      ]
+    },
+    {
+      "size": 4096,
+      "pngLevel": 6,
+      "pngBytes": 40782547,
+      "archiveBytes": 40547890,
+      "cpuSlowdown": 4,
+      "results": [
+        {
+          "syncMs": 10.799999997019768,
+          "totalMs": 495.09999999403954,
+          "maxTimerGapMs": 121.19999998807907,
+          "images": 1,
+          "width": 4096,
+          "rgbaBytes": 67108864,
+          "pixel": [
+            11,
+            11,
+            11,
+            255
+          ]
+        },
+        {
+          "syncMs": 10.299999997019768,
+          "totalMs": 449.70000000298023,
+          "maxTimerGapMs": 68,
+          "images": 1,
+          "width": 4096,
+          "rgbaBytes": 67108864,
+          "pixel": [
+            11,
+            11,
+            11,
+            255
+          ]
+        },
+        {
+          "syncMs": 11,
+          "totalMs": 453,
+          "maxTimerGapMs": 78.90000000596046,
+          "images": 1,
+          "width": 4096,
+          "rgbaBytes": 67108864,
+          "pixel": [
+            11,
+            11,
+            11,
+            255
+          ]
+        }
+      ]
+    },
+    {
+      "size": 4096,
+      "pngLevel": 0,
+      "pngBytes": 50343487,
+      "archiveBytes": 30120549,
+      "cpuSlowdown": 4,
+      "results": [
+        {
+          "syncMs": 13.599999994039536,
+          "totalMs": 431.20000000298023,
+          "maxTimerGapMs": 87.3999999910593,
+          "images": 1,
+          "width": 4096,
+          "rgbaBytes": 67108864,
+          "pixel": [
+            11,
+            11,
+            11,
+            255
+          ]
+        },
+        {
+          "syncMs": 9.099999994039536,
+          "totalMs": 383.29999999701977,
+          "maxTimerGapMs": 57.900000005960464,
+          "images": 1,
+          "width": 4096,
+          "rgbaBytes": 67108864,
+          "pixel": [
+            11,
+            11,
+            11,
+            255
+          ]
+        },
+        {
+          "syncMs": 8,
+          "totalMs": 394,
+          "maxTimerGapMs": 59.5,
+          "images": 1,
+          "width": 4096,
+          "rgbaBytes": 67108864,
+          "pixel": [
+            11,
+            11,
+            11,
+            255
+          ]
+        }
+      ]
+    }
+  ]
+}
