@@ -38,15 +38,15 @@ Maintain the existing measurement product through repeated inspect → reproduce
 
 ```
 Protect work and access       2 / 2
-Measure and reduce overhead   1 / 3
-Inspect workflows and guidance 0 / 2
+Measure and reduce overhead   2 / 3
+Inspect workflows and guidance 1 / 2
 Adopt supplied design system  0 / 1
                              ---------
-                             3 / 8 planned tasks
+                             5 / 8 planned tasks
 Discovered                   0 / 0
 ```
 
-Last touched: 2026-10-31; SR01/SR02 published as PR23/PR31; SR03 responsiveness as PR32, with archive-limit disposition open. SR04 complete in6d614f2 after full gate. SR05 small measured memory improvement in full gate79613. Guided-workflow assessment and full design overhaul remain in scope. Native loop active.
+Last touched: 2026-10-31; SR01/SR02 published as PR23/PR31; SR03 responsiveness as PR32, with archive-limit disposition open. SR04 complete in6d614f2 after full gate. SR05 complete in ed403c8 after full gate. SR07 runtime assessment complete; full design overhaul remains in scope. Archive guard full gate19691 is live. Native loop active.
 
 ## Protect work and access
 
@@ -75,7 +75,7 @@ Last touched: 2026-10-31; SR01/SR02 published as PR23/PR31; SR03 responsiveness 
       3MF texture entries decompress synchronously on the UI thread; archive expansion is not bounded like project archives. This is a source-confirmed risk, not yet a measured stall.
       **Fix:** measure a representative textured 3MF first, then remove demonstrated blocking work and protect allocation from malformed archive metadata using existing format/resource contracts. Preserve colors, image companions, transactional imports and actionable errors. Do not invent arbitrary product tiers or silently reject ordinary supported files. If no material stall is reproduced, document that and limit changes to proven robustness defects.
       **Responsiveness complete:** integration25bbfcf, cleanfb07615, https://github.com/CNCKitchen/ScanRuler/pull/32 verified OPEN/Greg-J/main/exactly9 files. Synthetic4K PNG median UI synchronous extraction1,154.5ms→11ms; timer gap1,157ms→97.7ms. Chrome4x main-thread slowdown does not equally throttle workers; canvas readback remains. Raw metrics `.gk-docs/reference/measurements/3mf-textures.json`; cleaned reproducer ran independently and confirms10.8ms median extraction. Full gate passed3,099unit/123MCP/build/browser suites; private scooter skipped. Clean branch20unit/preflight/build/two browser suites plus five production worker/render/save/reopen assertions passed. All jobs finished.
-      **Remaining robustness disposition:** no size cap adopted locally. Review ordinary large-file compatibility and bounded malformed-metadata behavior against the existing PR28 before closing this sub-item. Do not claim expansion protection is fixed. Independent startup/memory/design-baseline work may proceed while this upstream overlap is resolved.
+      **Robustness in verification:** tiny malformed headers reproduced 2 GiB allocation attempts under a safe VM allocator guard. Complete directory preflight now applies the existing 1 GiB project budget to selected model/config/rels/textures before any expansion, counting stored-entry allocation too; ignored sidecars and thumbnails are excluded. Eight focused archive tests pass. Earlier 7 real browser checks preserve source/scene/worker/measurements/draft/history on oversized model, texture and nested-project imports. Full gate19691 live; update PR32 only after final and isolated checks. Initial gate63509 stopped for the stored-entry correction, not a pass.
       **Overlap:** https://github.com/CNCKitchen/ScanRuler/pull/28 by Jozkah already proposes limits for both 3MF readers. Reviewed its source; do not duplicate that patch or claim authorship. Responsiveness work is separate and will name the overlap.
       refs: `docs/development.md`, `src/core/project/archive.ts`
       **Acceptance:** Same input before/after main-thread blocking and memory observations; real textured import/save/reopen; malformed archive rejection without losing the current project. Do not allocate huge adversarial buffers just to test rejection.
@@ -89,10 +89,10 @@ Last touched: 2026-10-31; SR01/SR02 published as PR23/PR31; SR03 responsiveness 
       **Acceptance:** Record identical before/after transfer and startup metrics, first workspace activation, saved-project opening, plugins=none and agent command behavior. The existing production exporter-laziness test must stay green.
       route: substantial/agentic
 
-- [ ] **SR-05** · medium · `src/core/parsers/stl.ts`, `src/core/geometry/weld.ts`, `src/app/imports.ts`
+- [x] **SR-05** · medium · `src/core/parsers/stl.ts`, `src/core/geometry/weld.ts`, `src/app/imports.ts`
       Source accounting estimates roughly 804 MB of input/welding buffers for a 250 MB, five-million-triangle STL before later geometry allocations; actual peak memory has not been measured.
       **Fix:** profile generated meshes of increasing size without exhausting this shared Mac. Reduce a proven redundant allocation or copy only if it produces a meaningful memory/time reduction while preserving exact geometry and failure recovery. Do not reduce input precision, fit fidelity, tolerances or rendering resolution to improve the score. Otherwise retain the implementation and report the evidence.
-      **In progress:** bounded parse/graph profiles at 32,768/524,288/1,179,648 triangles, three fresh Node processes each. Removing the redundant final index copy when all triangles survive reduces peak RSS medians 57.52→57.14, 163.55→157.61 and 321.69→314.91 MiB. All position/index/normal/adjacency hashes match. This is a small memory gain; no speed improvement, and it excludes full browser/GPU memory. Reproducer and raw JSON saved. Focused26 tests pass; full gate LIVE79613. No algorithm rewrite or precision reduction.
+      **Complete:** bounded parse/graph profiles at 32,768/524,288/1,179,648 triangles, three fresh Node processes each. Removing the redundant final index copy when all triangles survive reduces peak RSS medians 57.52→57.14, 163.55→157.61 and 321.69→314.91 MiB. All position/index/normal/adjacency hashes match. This is a small memory gain; no speed improvement, and it excludes full browser/GPU memory. Reproducer and raw JSON saved. Focused 26 tests and full gate79613 passed: 3,103 unit tests, 123 MCP tests, build and executable browser suites; private scooter skipped. Commit ed403c8. No algorithm rewrite or precision reduction.
       refs: `docs/development.md`, `CONTRIBUTING.md`
       **Acceptance:** Same inputs before/after peak-memory and import-time measurements; topology, measurements, save/reopen, signed-zero regressions and interrupted/failed import safety remain correct. One benchmark at a time.
       route: substantial/agentic
@@ -106,11 +106,11 @@ Last touched: 2026-10-31; SR01/SR02 published as PR23/PR31; SR03 responsiveness 
       **Acceptance:** Record the exercised paths, outcomes, explicit blind spots and any new defect IDs. For each repair, preserve a failing-before/passing-after case through a real entry point and an independently reviewed clean PR or a precise publication blocker.
       route: substantial/longctx
 
-- [ ] **SR-07** · medium · novice guidance assessment, added by Greg 2026-10-31
+- [x] **SR-07** · medium · novice guidance assessment, added by Greg 2026-10-31
       Greg asks whether a guided mode exists for a 3D scanner owner with little or no modeling experience. Audit current onboarding, hints, fit guides, manuals and sample availability before proposing additions.
       **Work:** exercise the actual path from first scan through unit/scale sanity checks, choosing a useful task, making a measurement, understanding confidence/accuracy, recovering from a bad pick, and saving/exporting the result. Compare novice and experienced paths. Distinguish a measurement guide from CAD/reverse-engineering instruction.
       **Acceptance:** show what already guides the person, where a novice gets stuck (with concrete UI evidence), and a proposed end-to-end guided workflow only where gaps justify it. Use that evidence in the explicitly requested SR-08 overhaul and its task-based onboarding. Present the first complete design for Greg’s visual review before extending it. No speculative feature implementation; independently reproducible bugs still get repairs.
-      **Initial evidence (source only):** `src/core/hints.ts` already implements a state-aware next-control ladder; hints default on and retire after two completed visits (`src/state/hintStore.ts`). 3D Measure ends guidance at the first dimension; 2D currently guides image import only. `src/app/stageHints.ts` narrates pick/editor steps. A novice UI walkthrough is still required.
+      **Source evidence:** `src/core/hints.ts` already implements a state-aware next-control ladder; hints default on and retire after two completed visits (`src/state/hintStore.ts`). 3D Measure ends guidance at the first dimension; 2D currently guides image import only. `src/app/stageHints.ts` narrates pick/editor steps. Fresh-default desktop UI walkthrough now completed: generated 20 mm cube → source units → two planes → 90° dimension → Undo/Redo → project download → STEP export. No store/API geometry seeding. Exact interface evidence and actionable guided-path recommendation in `.gk-docs/reference/novice-workflow.md` and `measurements/novice-workflow.json`. Hints stop at first dimension; method choice, scale sanity, quality interpretation and saving remain unguided. Support dialog interrupts first save. This is an expert-operated interface audit, not a human novice study or scanner-accuracy test. New guided mode is not implemented; proposal feeds SR08 first-piece review.
       route: substantial/product-review
 
 - [ ] **SR-08** · high · complete adoption of `new-design-system/`, added by Greg 2026-10-31

@@ -1,7 +1,7 @@
 {
   "date": "2026-10-31",
   "beforeCommit": "6d614f2",
-  "after": "SR05 pending verification",
+  "after": "ed403c8, full gate passed: 3103 unit tests, 123 MCP tests, production build and executable browser suites",
   "method": "STL parse and buildMeshGraph in three fresh Node processes per grid size; includes input and retained source copy. GC before parsing, none forced during pipeline. Peak resident set from process.resourceUsage().maxRSS; typed array allocation counts separately. SHA256 covers exact positions, triangle indices, normals and adjacency. Only this loop benchmark running.",
   "results": {
     "before": [
