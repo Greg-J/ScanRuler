@@ -12,4 +12,4 @@ Completed items are removed here; the run ledger retains its audit history.
 
 ## Reference facts
 
-The upstream docs remain unmapped; only .gk-docs belongs to Greenskeeper's lifecycle. Automation files must never enter an upstream PR. Browser harness fix 2ceaafe has passed both formerly failing suites without assertion changes; the initial complete gate passed. SR-01 replacement-import protection passed its complete gate and is undergoing isolated PR verification.
+The upstream docs remain unmapped; only .gk-docs belongs to Greenskeeper's lifecycle. Automation files must never enter an upstream PR. Browser harness fix 2ceaafe has passed both formerly failing suites without assertion changes; the initial complete gate passed. SR-01 replacement-import protection passed full and isolated checks and is published as PR #23 under Greg-J.

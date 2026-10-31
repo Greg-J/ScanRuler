@@ -37,23 +37,25 @@ Maintain the existing measurement product through repeated inspect → reproduce
 ## Status
 
 ```
-Protect work and access       0 / 2
+Protect work and access       1 / 2
 Measure and reduce overhead   0 / 3
 Inspect workflows and guidance 0 / 2
                              ---------
-                             0 / 7 planned tasks
+                             1 / 7 planned tasks
 Discovered                   0 / 0
 ```
 
-Last touched: 2026-10-31; native loop active. SR-01 product commit 2f9a99f passed the full gate (3,096 unit tests, 123 MCP tests, build and executable browser suites; private scooter fixture skipped). Clean upstream-based validation is running in session 18049 before PR publication. Its 12 browser assertions include absent-plugin project data; 7 guard tests pass.
+Last touched: 2026-10-31; SR-01 complete and published as PR #23 under Greg-J. SR-02 is next. Native loop remains active.
 
 ## Protect work and access
 
-- [ ] **SR-01** · high · `src/app/scanImport.ts:138`, `src/App.tsx:147`
+- [x] **SR-01** · high · `src/app/scanImport.ts:138`, `src/App.tsx:147`
       A valid replacement scan clears measurements and all undo history without asking, unlike opening a project. Reproduced with one existing point: elements 1 → 0 and no dialog.
       **Fix:** make destructive user imports preserve work on cancellation and explicitly resolve replacement before commit, covering drop/load/replace/address/plugin entry paths. Audit equivalent image/reference replacements for the same data-loss property. Preserve the agent's existing discard-required contract and avoid duplicate prompts for already-authorized agent actions. A failed import must still preserve worker/scene/source/history state.
       refs: `docs/manual.md`, `CONTRIBUTING.md`
       **Acceptance:** Browser regressions must show Cancel preserves measurements, source bytes and undo history; accepted replacement happens once; malformed replacement remains transactional; agent discard refusal and explicit acceptance still work.
+      **Proof:** original drop regression failed on scan/image/reference cancellation, confirmation and queued drafts; repaired regression passes 12 checks. Seven guard unit tests include redo-only work, plugin drafts and absent-plugin retained data. Full gate passed 3,096 unit tests, 123 MCP tests, build and executable browser suites; private scooter fixture skipped. Clean upstream branch additionally passed 52 relevant unit tests, boundary/units checks, build, and import/replacement/reverse-import-move browser checks. The latter now explicitly accepts and asserts the replacement warning with original geometry assertions unchanged.
+      **Publication:** integration commit `2f9a99f`; clean upstream commit `c70450d`; https://github.com/CNCKitchen/ScanRuler/pull/23, verified author Greg-J and exact 10-file source/test/docs scope. No automation metadata or PR #22 dependency. No merge or CLA signature.
       route: substantial/agentic
 
 - [ ] **SR-02** · high · `src/ui/SettingsModal.tsx:149`, `src/ui/UnitsModal.tsx`, `src/ui/AgentDataWarning.tsx`, `src/ui/SupportCard.tsx`, `src/ui/Imprint.tsx`
