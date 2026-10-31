@@ -7,6 +7,10 @@ saves carry the same number as `appVersion`. How a release is cut is in
 
 ## Unreleased
 
+- **Confirm replacement imports** (2026-10-31). Opening a scan, image or
+  reference now asks before replacing work or clearing undo and redo. Cancel
+  keeps the current sources and measurements, including unfinished picks.
+
 - **Import keyboard controls and signed zeros** (2026-10-31). Enter on Cancel
   in the units question now cancels; Enter on a unit selects it without opening
   the file. STL vertices at `+0` and `-0` now merge at the same position, so
