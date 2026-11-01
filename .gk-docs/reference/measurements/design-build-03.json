@@ -1,0 +1,907 @@
+{
+  "date": "2026-11-01",
+  "baseline": "e5eb06c83c36b70182cc34350f8deb390e679a4f",
+  "source": "059702612fab754241f959ff507b2a744a1aad71",
+  "method": "Three sequential fresh headless Chrome profiles per mode; production gzip, cache disabled, 100 ms latency, 1 MB/s, 4x main-thread slowdown, 1440x900. Usable means a real Settings click opens its dialog. Shared Mac; small sample, no speed gain claim.",
+  "before": {
+    "summary": {
+      "usableMedianMs": {
+        "default": 1888.5,
+        "none": 1854.8
+      },
+      "initialEncodedBytes": 1115287
+    },
+    "runs": [
+      {
+        "mode": "default",
+        "run": 0,
+        "buttonAt": 1808,
+        "usableMs": 1891,
+        "paints": [
+          {
+            "name": "first-paint",
+            "ms": 264
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 1796
+          }
+        ],
+        "resources": [
+          {
+            "name": "/assets/index-Dxr9_mQ9.js",
+            "encoded": 1096046,
+            "decoded": 3443181,
+            "duration": 1218.800000011921
+          },
+          {
+            "name": "/assets/index-BInIgj5m.css",
+            "encoded": 16446,
+            "decoded": 84049,
+            "duration": 138.10000002384186
+          },
+          {
+            "name": "/assets/edgeWorker-BfEy4kEO.js",
+            "encoded": 2795,
+            "decoded": 5937,
+            "duration": -110.7000000178814
+          }
+        ],
+        "errors": [],
+        "profile": {
+          "cpu": 4,
+          "latency": 100,
+          "bytesPerSecond": 1000000,
+          "gzip": true,
+          "cold": true
+        }
+      },
+      {
+        "mode": "default",
+        "run": 1,
+        "buttonAt": 1809.4000000059605,
+        "usableMs": 1888.5,
+        "paints": [
+          {
+            "name": "first-paint",
+            "ms": 264
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 1800
+          }
+        ],
+        "resources": [
+          {
+            "name": "/assets/index-Dxr9_mQ9.js",
+            "encoded": 1096046,
+            "decoded": 3443181,
+            "duration": 1219.4000000059605
+          },
+          {
+            "name": "/assets/index-BInIgj5m.css",
+            "encoded": 16446,
+            "decoded": 84049,
+            "duration": 138.5
+          },
+          {
+            "name": "/assets/edgeWorker-BfEy4kEO.js",
+            "encoded": 2795,
+            "decoded": 5937,
+            "duration": -111
+          }
+        ],
+        "errors": [],
+        "profile": {
+          "cpu": 4,
+          "latency": 100,
+          "bytesPerSecond": 1000000,
+          "gzip": true,
+          "cold": true
+        }
+      },
+      {
+        "mode": "default",
+        "run": 2,
+        "buttonAt": 1804.7000000178814,
+        "usableMs": 1873.7000000178814,
+        "paints": [
+          {
+            "name": "first-paint",
+            "ms": 264
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 1792
+          }
+        ],
+        "resources": [
+          {
+            "name": "/assets/index-Dxr9_mQ9.js",
+            "encoded": 1096046,
+            "decoded": 3443181,
+            "duration": 1218.300000011921
+          },
+          {
+            "name": "/assets/index-BInIgj5m.css",
+            "encoded": 16446,
+            "decoded": 84049,
+            "duration": 137.59999999403954
+          },
+          {
+            "name": "/assets/edgeWorker-BfEy4kEO.js",
+            "encoded": 2795,
+            "decoded": 5937,
+            "duration": -110.80000001192093
+          }
+        ],
+        "errors": [],
+        "profile": {
+          "cpu": 4,
+          "latency": 100,
+          "bytesPerSecond": 1000000,
+          "gzip": true,
+          "cold": true
+        }
+      },
+      {
+        "mode": "none",
+        "run": 0,
+        "buttonAt": 1776,
+        "usableMs": 1854.800000011921,
+        "paints": [
+          {
+            "name": "first-paint",
+            "ms": 264
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 1768
+          }
+        ],
+        "resources": [
+          {
+            "name": "/assets/index-Dxr9_mQ9.js",
+            "encoded": 1096046,
+            "decoded": 3443181,
+            "duration": 1214.5999999940395
+          },
+          {
+            "name": "/assets/index-BInIgj5m.css",
+            "encoded": 16446,
+            "decoded": 84049,
+            "duration": 135.5
+          },
+          {
+            "name": "/assets/edgeWorker-BfEy4kEO.js",
+            "encoded": 2795,
+            "decoded": 5937,
+            "duration": -88.30000001192093
+          }
+        ],
+        "errors": [],
+        "profile": {
+          "cpu": 4,
+          "latency": 100,
+          "bytesPerSecond": 1000000,
+          "gzip": true,
+          "cold": true
+        }
+      },
+      {
+        "mode": "none",
+        "run": 1,
+        "buttonAt": 1774.0999999940395,
+        "usableMs": 1841.9000000059605,
+        "paints": [
+          {
+            "name": "first-paint",
+            "ms": 268
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 1764
+          }
+        ],
+        "resources": [
+          {
+            "name": "/assets/index-Dxr9_mQ9.js",
+            "encoded": 1096046,
+            "decoded": 3443181,
+            "duration": 1218
+          },
+          {
+            "name": "/assets/index-BInIgj5m.css",
+            "encoded": 16446,
+            "decoded": 84049,
+            "duration": 137.90000000596046
+          },
+          {
+            "name": "/assets/edgeWorker-BfEy4kEO.js",
+            "encoded": 2795,
+            "decoded": 5937,
+            "duration": -87
+          }
+        ],
+        "errors": [],
+        "profile": {
+          "cpu": 4,
+          "latency": 100,
+          "bytesPerSecond": 1000000,
+          "gzip": true,
+          "cold": true
+        }
+      },
+      {
+        "mode": "none",
+        "run": 2,
+        "buttonAt": 1775,
+        "usableMs": 1858.5999999940395,
+        "paints": [
+          {
+            "name": "first-paint",
+            "ms": 268
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 1768
+          }
+        ],
+        "resources": [
+          {
+            "name": "/assets/index-Dxr9_mQ9.js",
+            "encoded": 1096046,
+            "decoded": 3443181,
+            "duration": 1218.8999999761581
+          },
+          {
+            "name": "/assets/index-BInIgj5m.css",
+            "encoded": 16446,
+            "decoded": 84049,
+            "duration": 138.2999999821186
+          },
+          {
+            "name": "/assets/edgeWorker-BfEy4kEO.js",
+            "encoded": 2795,
+            "decoded": 5937,
+            "duration": -88.30000001192093
+          }
+        ],
+        "errors": [],
+        "profile": {
+          "cpu": 4,
+          "latency": 100,
+          "bytesPerSecond": 1000000,
+          "gzip": true,
+          "cold": true
+        }
+      }
+    ]
+  },
+  "after": {
+    "summary": {
+      "usableMedianMs": {
+        "default": 1885.3,
+        "none": 1852.9
+      },
+      "initialEncodedBytes": 1120603
+    },
+    "runs": [
+      {
+        "mode": "default",
+        "run": 0,
+        "buttonAt": 1814,
+        "usableMs": 1891,
+        "paints": [
+          {
+            "name": "first-paint",
+            "ms": 272
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 1804
+          }
+        ],
+        "resources": [
+          {
+            "name": "/assets/index-XwvP0kbD.js",
+            "encoded": 1101073,
+            "decoded": 3458556,
+            "duration": 1224.2000000178814
+          },
+          {
+            "name": "/assets/index-Bk60pFh4.css",
+            "encoded": 16735,
+            "decoded": 86271,
+            "duration": 139.19999998807907
+          },
+          {
+            "name": "/assets/edgeWorker-BfEy4kEO.js",
+            "encoded": 2795,
+            "decoded": 5937,
+            "duration": -112
+          }
+        ],
+        "errors": [],
+        "profile": {
+          "cpu": 4,
+          "latency": 100,
+          "bytesPerSecond": 1000000,
+          "gzip": true,
+          "cold": true
+        }
+      },
+      {
+        "mode": "default",
+        "run": 1,
+        "buttonAt": 1812.5999999940395,
+        "usableMs": 1885.2999999821186,
+        "paints": [
+          {
+            "name": "first-paint",
+            "ms": 264
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 1804
+          }
+        ],
+        "resources": [
+          {
+            "name": "/assets/index-XwvP0kbD.js",
+            "encoded": 1101073,
+            "decoded": 3458556,
+            "duration": 1224.2000000178814
+          },
+          {
+            "name": "/assets/index-Bk60pFh4.css",
+            "encoded": 16735,
+            "decoded": 86271,
+            "duration": 137.7999999821186
+          },
+          {
+            "name": "/assets/edgeWorker-BfEy4kEO.js",
+            "encoded": 2795,
+            "decoded": 5937,
+            "duration": -113.59999999403954
+          }
+        ],
+        "errors": [],
+        "profile": {
+          "cpu": 4,
+          "latency": 100,
+          "bytesPerSecond": 1000000,
+          "gzip": true,
+          "cold": true
+        }
+      },
+      {
+        "mode": "default",
+        "run": 2,
+        "buttonAt": 1814.3999999761581,
+        "usableMs": 1883.8999999761581,
+        "paints": [
+          {
+            "name": "first-paint",
+            "ms": 264
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 1808
+          }
+        ],
+        "resources": [
+          {
+            "name": "/assets/index-Bk60pFh4.css",
+            "encoded": 16735,
+            "decoded": 86271,
+            "duration": 135.19999998807907
+          },
+          {
+            "name": "/assets/index-XwvP0kbD.js",
+            "encoded": 1101073,
+            "decoded": 3458556,
+            "duration": 1221.4000000059605
+          },
+          {
+            "name": "/assets/edgeWorker-BfEy4kEO.js",
+            "encoded": 2795,
+            "decoded": 5937,
+            "duration": -120.09999999403954
+          }
+        ],
+        "errors": [],
+        "profile": {
+          "cpu": 4,
+          "latency": 100,
+          "bytesPerSecond": 1000000,
+          "gzip": true,
+          "cold": true
+        }
+      },
+      {
+        "mode": "none",
+        "run": 0,
+        "buttonAt": 1788.0999999940395,
+        "usableMs": 1853.3999999761581,
+        "paints": [
+          {
+            "name": "first-paint",
+            "ms": 268
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 1780
+          }
+        ],
+        "resources": [
+          {
+            "name": "/assets/index-XwvP0kbD.js",
+            "encoded": 1101073,
+            "decoded": 3458556,
+            "duration": 1225.300000011921
+          },
+          {
+            "name": "/assets/index-Bk60pFh4.css",
+            "encoded": 16735,
+            "decoded": 86271,
+            "duration": 138.80000001192093
+          },
+          {
+            "name": "/assets/edgeWorker-BfEy4kEO.js",
+            "encoded": 2795,
+            "decoded": 5937,
+            "duration": -88.90000000596046
+          }
+        ],
+        "errors": [],
+        "profile": {
+          "cpu": 4,
+          "latency": 100,
+          "bytesPerSecond": 1000000,
+          "gzip": true,
+          "cold": true
+        }
+      },
+      {
+        "mode": "none",
+        "run": 1,
+        "buttonAt": 1780.9000000059605,
+        "usableMs": 1848.699999988079,
+        "paints": [
+          {
+            "name": "first-paint",
+            "ms": 260
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 1772
+          }
+        ],
+        "resources": [
+          {
+            "name": "/assets/index-XwvP0kbD.js",
+            "encoded": 1101073,
+            "decoded": 3458556,
+            "duration": 1221.0999999940395
+          },
+          {
+            "name": "/assets/index-Bk60pFh4.css",
+            "encoded": 16735,
+            "decoded": 86271,
+            "duration": 135.69999998807907
+          },
+          {
+            "name": "/assets/edgeWorker-BfEy4kEO.js",
+            "encoded": 2795,
+            "decoded": 5937,
+            "duration": -83.69999998807907
+          }
+        ],
+        "errors": [],
+        "profile": {
+          "cpu": 4,
+          "latency": 100,
+          "bytesPerSecond": 1000000,
+          "gzip": true,
+          "cold": true
+        }
+      },
+      {
+        "mode": "none",
+        "run": 2,
+        "buttonAt": 1787,
+        "usableMs": 1852.9000000059605,
+        "paints": [
+          {
+            "name": "first-paint",
+            "ms": 260
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 1780
+          }
+        ],
+        "resources": [
+          {
+            "name": "/assets/index-XwvP0kbD.js",
+            "encoded": 1101073,
+            "decoded": 3458556,
+            "duration": 1223
+          },
+          {
+            "name": "/assets/index-Bk60pFh4.css",
+            "encoded": 16735,
+            "decoded": 86271,
+            "duration": 137
+          },
+          {
+            "name": "/assets/edgeWorker-BfEy4kEO.js",
+            "encoded": 2795,
+            "decoded": 5937,
+            "duration": -90.7999999821186
+          }
+        ],
+        "errors": [],
+        "profile": {
+          "cpu": 4,
+          "latency": 100,
+          "bytesPerSecond": 1000000,
+          "gzip": true,
+          "cold": true
+        }
+      }
+    ]
+  },
+  "verification": {
+    "unitPassed": 3116,
+    "unitSkipped": 24,
+    "mcpPassed": 123,
+    "browserSuites": 27,
+    "gateExit": 0,
+    "productionWorkspaceAndNoteChecks": "passed",
+    "newGuideReopenRegression": "failed before scan-load subscription; passes after",
+    "noteRegression": {
+      "upstreamBase": "5c1f2f9",
+      "beforeOffsetPx": [
+        34,
+        -17
+      ],
+      "afterOffsetPx": [
+        0,
+        0
+      ],
+      "pr": "https://github.com/CNCKitchen/ScanRuler/pull/70"
+    }
+  },
+  "layouts": [
+    {
+      "workspace": "deviation",
+      "theme": "light",
+      "design": "measure",
+      "top": 48,
+      "rail": 56,
+      "stage": "#e9edf2",
+      "overflow": false
+    },
+    {
+      "workspace": "thickness",
+      "theme": "light",
+      "design": "measure",
+      "top": 48,
+      "rail": 56,
+      "stage": "#e9edf2",
+      "overflow": false
+    },
+    {
+      "workspace": "flat",
+      "theme": "light",
+      "design": "measure",
+      "top": 48,
+      "rail": 56,
+      "stage": "#e9edf2",
+      "overflow": false
+    },
+    {
+      "workspace": "reverse",
+      "theme": "light",
+      "design": "measure",
+      "top": 48,
+      "rail": 56,
+      "stage": "#e9edf2",
+      "overflow": false
+    },
+    {
+      "workspace": "mesh",
+      "theme": "light",
+      "design": "measure",
+      "top": 48,
+      "rail": 56,
+      "stage": "#e9edf2",
+      "overflow": false
+    },
+    {
+      "workspace": "elements",
+      "theme": "light",
+      "design": "measure",
+      "top": 48,
+      "rail": 56,
+      "stage": "#e9edf2",
+      "overflow": false
+    },
+    {
+      "workspace": "elements",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 56,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "workspace": "deviation",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 56,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "workspace": "thickness",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 56,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "workspace": "flat",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 56,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "workspace": "reverse",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 56,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "workspace": "mesh",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 56,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "width": 900,
+      "height": 800,
+      "workspace": "deviation",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 56,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "width": 900,
+      "height": 800,
+      "workspace": "thickness",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 56,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "width": 900,
+      "height": 800,
+      "workspace": "flat",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 56,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "width": 900,
+      "height": 800,
+      "workspace": "reverse",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 56,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "width": 900,
+      "height": 800,
+      "workspace": "mesh",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 56,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "workspace": "deviation",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 48,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "workspace": "thickness",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 48,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "workspace": "flat",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 48,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "workspace": "reverse",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 48,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "workspace": "mesh",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 48,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "workspace": "deviation",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 48,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "workspace": "thickness",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 48,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "workspace": "flat",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 48,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "workspace": "reverse",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 48,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "workspace": "mesh",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 48,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "width": 720,
+      "height": 450,
+      "workspace": "deviation",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 48,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "width": 720,
+      "height": 450,
+      "workspace": "thickness",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 48,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "width": 720,
+      "height": 450,
+      "workspace": "flat",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 48,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "width": 720,
+      "height": 450,
+      "workspace": "reverse",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 48,
+      "stage": "#080c12",
+      "overflow": false
+    },
+    {
+      "width": 720,
+      "height": 450,
+      "workspace": "mesh",
+      "theme": "dark",
+      "design": "measure",
+      "top": 48,
+      "rail": 48,
+      "stage": "#080c12",
+      "overflow": false
+    }
+  ]
+}

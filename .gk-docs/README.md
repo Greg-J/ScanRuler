@@ -5,6 +5,8 @@ Upstream docs in `docs/`, `mcp/`, and `plugins/` remain in their existing format
 | Document | Status | Purpose |
 | --- | --- | --- |
 | [Run and publication safety](reference/runbooks/run-and-publication.md) | authoritative | Verification, branch boundaries, PR publication and stopping |
-| [Design build 01](reference/design-build-01.md) | in-flight | Working first-piece review, verification and remaining scope |
+| [Design build 01](reference/design-build-01.md) | historical | Approved first-piece review and initial verification |
+
+| [Design build 03](reference/design-build-03.md) | authoritative | Complete shared-workspace design, darker mode, guidance, regression and performance evidence |
 
 The run ledger is `planning/value-improvements-ledger.md`.

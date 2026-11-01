@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-01",
+  "reproducer": "scripts/e2e-note-style.mjs",
+  "upstreamBase": "5c1f2f9",
+  "cleanFix": "2537b18",
+  "before": {
+    "xOffsetPx": 34,
+    "yOffsetPx": -17,
+    "passed": false
+  },
+  "after": {
+    "xOffsetPx": 0,
+    "yOffsetPx": 0,
+    "passed": true
+  },
+  "scope": "2D note lower-left anchor after a real image import, canvas click and typed text; reverse plugin styles loaded",
+  "isolatedChecks": [
+    "new browser regression fails before and passes after",
+    "existing reverse-note browser suite passes",
+    "production build passes",
+    "plugin boundary and units checks pass"
+  ],
+  "integration": "9b71470; final full build-03 gate passed",
+  "limits": [
+    "Chrome only",
+    "no geometry or note coordinate changes"
+  ],
+  "pr": "https://github.com/CNCKitchen/ScanRuler/pull/70"
+}

@@ -6,11 +6,10 @@ Completed items are removed here; the run ledger retains its audit history.
 
 - [ ] (2026-10-31) Personally decide whether to accept the CLA on https://github.com/CNCKitchen/ScanRuler/pull/22. Independent repairs may continue; agents cannot sign it.
 
-- [ ] (2026-10-31) Review the first working design at http://127.0.0.1:5199/ and approve its direction before the remaining workspace overhaul (AGENTS rule 16). Build and proof: `.gk-docs/reference/design-build-01.md`.
 
-## Open work
+## Completed
 
-- [ ] (2026-10-31) Work `.gk-docs/planning/value-improvements-ledger.md` in the active native task loop. Greenskeeper remains stopped; its missing global skill links are not needed for this executor. No speculative features or deployment.
+The bounded review and improvement ledger is complete. Build 03: http://127.0.0.1:5200/. Full proof and review checks: `.gk-docs/reference/design-build-03.md`. Greenskeeper remains stopped. No deployment is authorized; no GPU/timing jobs after handoff until Greg replies.
 
 ## Reference facts
 

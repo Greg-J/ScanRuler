@@ -42,3 +42,7 @@ Use an optional **Measure my scan** task that operates the existing tools. It is
 Reuse the existing hint/state machinery, draft validators and history. Coach marks need Skip and Back and must not block the canvas or take focus away from the current input. The guide must follow actual project state when steps are done out of order or undone. Do not add a separate conflicting model of task completion.
 
 This recommendation feeds the first working SR-08 design for Greg's review. It does not claim a new guided mode has been implemented or approved. The complete overhaul remains authorized; its first finished visual piece still needs the review required by Greg's AGENTS rule 16.
+
+## Implemented after visual approval, 2026-11-01
+
+The approved design pass adds an opt-in Guided measurement panel: import, scale sanity check, measurement choice, real surface fitting and fit-quality explanation, dimension creation, Undo/Redo practice, and editable project download. Back reviews instructions without changing geometry; Skip closes the guide. The original sample goes through the normal importer and fitter. The angle route is tested through actual controls and a downloaded `.scanruler` file. This remains an expert-operated workflow test, not novice-user research or scanner-accuracy evidence.
