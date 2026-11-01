@@ -2,6 +2,10 @@
 
 Source: d87bdae, 2026-10-31. Working 3D Measure implementation of Greg's supplied design system. The original reference directory remains unmodified. Full application adoption remains open pending Greg's first-piece approval under his AGENTS rule 16.
 
+## Width correction: build 02, 2026-11-01
+
+Greg reported the narrow `.startpane`. Build 02 at http://127.0.0.1:5199/ removes the 480 px outer cap and the one-sided phone width reduction. The pane now fills its stage (480→1,136 px at 1440×900), with the existing 520 px text limit preserved. Short windows scroll from below the toolbar, with clearance for floating controls. Production sample import passed at five sizes from 320 px to 1440 px; full gate passed 3,115 unit / 123 MCP / build / all available browser suites. Private scooter skipped. Existing 320 px top-bar overflow is a separate shell concern. [Raw before/after](measurements/startpane-width.json). Build 01 remains unchanged for comparison.
+
 ## Try the working screen
 
 Local review URL: http://127.0.0.1:5198/ . Numbered production copy: `e2e-out/review/build-01`. If the owned review process has ended, run `npm run preview -- --outDir e2e-out/review/build-01 --host 127.0.0.1 --port 5198 --strictPort` from this project. Do not stop another process to free that port.

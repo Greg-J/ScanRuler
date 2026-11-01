@@ -1,0 +1,252 @@
+{
+  "date": "2026-11-01",
+  "baseline": "d87bdae (build 01)",
+  "method": "Fresh owned headless Chrome profiles, real production application at each viewport. Measure stage/pane/heading rectangles, capture screenshots, click the sample and wait for 3,072 imported triangles. No store/API geometry seeding.",
+  "before": [
+    {
+      "width": 1440,
+      "height": 900,
+      "stage": {
+        "x": 304,
+        "y": 48,
+        "width": 1136,
+        "height": 824
+      },
+      "pane": {
+        "x": 304,
+        "y": 48,
+        "width": 480,
+        "height": 824
+      },
+      "heading": {
+        "x": 329,
+        "y": 249.125,
+        "width": 430,
+        "height": 101
+      },
+      "overflow": false
+    },
+    {
+      "width": 900,
+      "height": 800,
+      "stage": {
+        "x": 304,
+        "y": 48,
+        "width": 596,
+        "height": 724
+      },
+      "pane": {
+        "x": 304,
+        "y": 48,
+        "width": 480,
+        "height": 724
+      },
+      "heading": {
+        "x": 329,
+        "y": 199.125,
+        "width": 430,
+        "height": 101
+      },
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "stage": {
+        "x": 48,
+        "y": 48,
+        "width": 342,
+        "height": 768
+      },
+      "pane": {
+        "x": 48,
+        "y": 48,
+        "width": 318,
+        "height": 680
+      },
+      "heading": {
+        "x": 65,
+        "y": 154.125,
+        "width": 284,
+        "height": 113
+      },
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "stage": {
+        "x": 48,
+        "y": 48,
+        "width": 272,
+        "height": 492
+      },
+      "pane": {
+        "x": 48,
+        "y": 48,
+        "width": 248,
+        "height": 404
+      },
+      "heading": {
+        "x": 65,
+        "y": -21.5625,
+        "width": 214,
+        "height": 153
+      },
+      "overflow": true
+    },
+    {
+      "width": 720,
+      "height": 450,
+      "stage": {
+        "x": 48,
+        "y": 48,
+        "width": 672,
+        "height": 374
+      },
+      "pane": {
+        "x": 48,
+        "y": 48,
+        "width": 480,
+        "height": 286
+      },
+      "heading": {
+        "x": 65,
+        "y": -23.875,
+        "width": 446,
+        "height": 93
+      },
+      "overflow": false
+    }
+  ],
+  "after": [
+    {
+      "width": 1440,
+      "height": 900,
+      "stage": {
+        "x": 304,
+        "y": 48,
+        "width": 1136,
+        "height": 824
+      },
+      "pane": {
+        "x": 304,
+        "y": 48,
+        "width": 1136,
+        "height": 824
+      },
+      "heading": {
+        "x": 612,
+        "y": 231.125,
+        "width": 520,
+        "height": 101
+      },
+      "overflow": false
+    },
+    {
+      "width": 900,
+      "height": 800,
+      "stage": {
+        "x": 304,
+        "y": 48,
+        "width": 596,
+        "height": 724
+      },
+      "pane": {
+        "x": 304,
+        "y": 48,
+        "width": 596,
+        "height": 724
+      },
+      "heading": {
+        "x": 342,
+        "y": 181.125,
+        "width": 520,
+        "height": 101
+      },
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "stage": {
+        "x": 48,
+        "y": 48,
+        "width": 342,
+        "height": 768
+      },
+      "pane": {
+        "x": 48,
+        "y": 48,
+        "width": 342,
+        "height": 680
+      },
+      "heading": {
+        "x": 65,
+        "y": 132.125,
+        "width": 308,
+        "height": 113
+      },
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "stage": {
+        "x": 48,
+        "y": 48,
+        "width": 272,
+        "height": 492
+      },
+      "pane": {
+        "x": 48,
+        "y": 48,
+        "width": 272,
+        "height": 404
+      },
+      "heading": {
+        "x": 65,
+        "y": 117,
+        "width": 238,
+        "height": 133
+      },
+      "overflow": true
+    },
+    {
+      "width": 720,
+      "height": 450,
+      "stage": {
+        "x": 48,
+        "y": 48,
+        "width": 672,
+        "height": 374
+      },
+      "pane": {
+        "x": 48,
+        "y": 48,
+        "width": 672,
+        "height": 286
+      },
+      "heading": {
+        "x": 124,
+        "y": 117,
+        "width": 520,
+        "height": 93
+      },
+      "overflow": false
+    }
+  ],
+  "afterSampleOpenedAtEverySize": true,
+  "fullGate": {
+    "unitPassed": 3115,
+    "mcpPassed": 123,
+    "productionBuild": "passed",
+    "availableBrowserSuites": "passed",
+    "privateScooter": "skipped"
+  },
+  "limitations": [
+    "Chrome only",
+    "Existing page-level top-bar overflow at 320 px persists; start pane itself now matches its stage width",
+    "No approval of the remaining design overhaul inferred from this feedback"
+  ]
+}

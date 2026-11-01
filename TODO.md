@@ -6,7 +6,7 @@ Completed items are removed here; the run ledger retains its audit history.
 
 - [ ] (2026-10-31) Personally decide whether to accept the CLA on https://github.com/CNCKitchen/ScanRuler/pull/22. Independent repairs may continue; agents cannot sign it.
 
-- [ ] (2026-10-31) Review the first working design at http://127.0.0.1:5198/ and approve its direction before the remaining workspace overhaul (AGENTS rule 16). Build and proof: `.gk-docs/reference/design-build-01.md`.
+- [ ] (2026-10-31) Review the first working design at http://127.0.0.1:5199/ and approve its direction before the remaining workspace overhaul (AGENTS rule 16). Build and proof: `.gk-docs/reference/design-build-01.md`.
 
 ## Open work
 
