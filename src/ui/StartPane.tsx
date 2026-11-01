@@ -82,6 +82,7 @@ export function StartPane({
   blurb,
   slots,
   skip,
+  sample,
 }: {
   title: string
   blurb: string
@@ -89,6 +90,7 @@ export function StartPane({
   /** A way past the door for a workspace that can work with no model at
    *  all, from a blank stage. */
   skip?: { label: string; title: string; onClick: () => void }
+  sample?: { onClick: () => void; caption: string }
 }) {
   // A workspace that wants two models can have the second one dropped first —
   // a STEP file can only ever be the reference — so the prompt says what is
@@ -110,6 +112,7 @@ export function StartPane({
       <div className="startfoot">
         Drag &amp; drop works anywhere in the window — the first empty slot takes it.
       </div>
+      {sample && <div className="start-sample"><button data-test="open-measure-sample" onClick={sample.onClick}>Try a measurement sample</button><span>{sample.caption}</span></div>}
       {skip && (
         <div className="startskip">
           <button className="ghost" data-test="start-skip" title={skip.title} onClick={skip.onClick}>
