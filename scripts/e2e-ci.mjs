@@ -80,6 +80,7 @@ try {
   try {
     await run('e2e-production', production.resolvedUrls.local[0])
     await run('e2e-measure-production', production.resolvedUrls.local[0])
+    await run('e2e-preview-surface', production.resolvedUrls.local[0])
   }
   finally {
     await new Promise((resolve, reject) => {
