@@ -28,7 +28,7 @@ The browser checks use owned headless Chrome profiles, synthetic geometry and ac
 
 No physical scanner, touch/pen/SpaceMouse hardware, Safari/Firefox or human novice study was performed. Private scan fixtures remain unavailable and skipped. Existing numeric conversion and validation behavior was retained; no new expression grammar or document-precision setting was invented. Upstream advanced to 0.9.4 during this work; the redesign fork remains based on the reviewed 0.9.2 line, while the isolated note-style PR is based on current upstream.
 
-No deployment, upstream design PR, merge or CLA signature. Review builds 01 and 02 remain unchanged for comparison. After handing over build 03, do not run further GPU/timing work until Greg responds.
+At the original build 03 handoff, no upstream design PR had been authorized. Greg subsequently authorized publication; see [draft PR #71 and its verification](design-upstream-pr.md). Build 03 stays unchanged on port 5200. Greg requested stopping the older review servers on ports 5198 and 5199; both are now stopped. No deployment, merge or CLA signature was performed.
 
 ## Review checks
 

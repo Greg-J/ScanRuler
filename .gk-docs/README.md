@@ -10,3 +10,5 @@ Upstream docs in `docs/`, `mcp/`, and `plugins/` remain in their existing format
 | [Design build 03](reference/design-build-03.md) | authoritative | Complete shared-workspace design, darker mode, guidance, regression and performance evidence |
 
 The run ledger is `planning/value-improvements-ledger.md`.
+
+| [Upstream design proposal](reference/design-upstream-pr.md) | authoritative | Draft PR #71, current-upstream port, verification and active review server |
