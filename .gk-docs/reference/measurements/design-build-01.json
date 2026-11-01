@@ -1,0 +1,593 @@
+{
+  "date": "2026-10-31",
+  "baseline": "06b2186",
+  "source": "d87bdaedaffe31aef95e5f39329faca80d42e400",
+  "method": "Three sequential fresh headless Chrome profiles per mode; production gzip, cache disabled, 100 ms latency, 1 MB/s, 4x main-thread slowdown, 1440x900. Usable means the real Settings click opens its dialog. Shared Mac; small sample, no speedup claim.",
+  "before": {
+    "summary": {
+      "usableMedianMs": {
+        "default": 1984.2,
+        "none": 1950.7
+      },
+      "initialEncodedBytes": 1106648,
+      "initialDecodedBytes": 3500869
+    },
+    "runs": [
+      {
+        "mode": "default",
+        "run": 0,
+        "buttonAt": 1942.4000000059605,
+        "usableMs": 2009.2999999970198,
+        "paints": [
+          {
+            "name": "first-paint",
+            "ms": 324
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 1756
+          }
+        ],
+        "resources": [
+          {
+            "name": "/assets/index-BNdfikoO.css",
+            "encoded": 13263,
+            "decoded": 68667,
+            "duration": 166.70000000298023
+          },
+          {
+            "name": "/assets/index-43cpXYiX.js",
+            "encoded": 1090590,
+            "decoded": 3426265,
+            "duration": 1276.6000000089407
+          },
+          {
+            "name": "/assets/edgeWorker-BfEy4kEO.js",
+            "encoded": 2795,
+            "decoded": 5937,
+            "duration": -170.90000000596046
+          }
+        ],
+        "errors": [],
+        "profile": {
+          "cpu": 4,
+          "latency": 100,
+          "bytesPerSecond": 1000000,
+          "gzip": true,
+          "cold": true
+        }
+      },
+      {
+        "mode": "default",
+        "run": 1,
+        "buttonAt": 1916.4000000059605,
+        "usableMs": 1982.7999999970198,
+        "paints": [
+          {
+            "name": "first-paint",
+            "ms": 324
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 1744
+          }
+        ],
+        "resources": [
+          {
+            "name": "/assets/index-BNdfikoO.css",
+            "encoded": 13263,
+            "decoded": 68667,
+            "duration": 162.8999999910593
+          },
+          {
+            "name": "/assets/index-43cpXYiX.js",
+            "encoded": 1090590,
+            "decoded": 3426265,
+            "duration": 1272.8999999910593
+          },
+          {
+            "name": "/assets/edgeWorker-BfEy4kEO.js",
+            "encoded": 2795,
+            "decoded": 5937,
+            "duration": -155.30000001192093
+          }
+        ],
+        "errors": [],
+        "profile": {
+          "cpu": 4,
+          "latency": 100,
+          "bytesPerSecond": 1000000,
+          "gzip": true,
+          "cold": true
+        }
+      },
+      {
+        "mode": "default",
+        "run": 2,
+        "buttonAt": 1929.1000000089407,
+        "usableMs": 1984.2000000029802,
+        "paints": [
+          {
+            "name": "first-paint",
+            "ms": 328
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 1756
+          }
+        ],
+        "resources": [
+          {
+            "name": "/assets/index-BNdfikoO.css",
+            "encoded": 13263,
+            "decoded": 68667,
+            "duration": 165.90000000596046
+          },
+          {
+            "name": "/assets/index-43cpXYiX.js",
+            "encoded": 1090590,
+            "decoded": 3426265,
+            "duration": 1276.1000000089407
+          },
+          {
+            "name": "/assets/edgeWorker-BfEy4kEO.js",
+            "encoded": 2795,
+            "decoded": 5937,
+            "duration": -161.69999998807907
+          }
+        ],
+        "errors": [],
+        "profile": {
+          "cpu": 4,
+          "latency": 100,
+          "bytesPerSecond": 1000000,
+          "gzip": true,
+          "cold": true
+        }
+      },
+      {
+        "mode": "none",
+        "run": 0,
+        "buttonAt": 1900.4000000059605,
+        "usableMs": 1955.7999999970198,
+        "paints": [
+          {
+            "name": "first-paint",
+            "ms": 320
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 1744
+          }
+        ],
+        "resources": [
+          {
+            "name": "/assets/index-43cpXYiX.js",
+            "encoded": 1090590,
+            "decoded": 3426265,
+            "duration": 1273
+          },
+          {
+            "name": "/assets/index-BNdfikoO.css",
+            "encoded": 13263,
+            "decoded": 68667,
+            "duration": 162.29999999701977
+          },
+          {
+            "name": "/assets/edgeWorker-BfEy4kEO.js",
+            "encoded": 2795,
+            "decoded": 5937,
+            "duration": -136.3999999910593
+          }
+        ],
+        "errors": [],
+        "profile": {
+          "cpu": 4,
+          "latency": 100,
+          "bytesPerSecond": 1000000,
+          "gzip": true,
+          "cold": true
+        }
+      },
+      {
+        "mode": "none",
+        "run": 1,
+        "buttonAt": 1887.1000000089407,
+        "usableMs": 1950.7000000029802,
+        "paints": [
+          {
+            "name": "first-paint",
+            "ms": 324
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 1740
+          }
+        ],
+        "resources": [
+          {
+            "name": "/assets/index-43cpXYiX.js",
+            "encoded": 1090590,
+            "decoded": 3426265,
+            "duration": 1276
+          },
+          {
+            "name": "/assets/index-BNdfikoO.css",
+            "encoded": 13263,
+            "decoded": 68667,
+            "duration": 165.5
+          },
+          {
+            "name": "/assets/edgeWorker-BfEy4kEO.js",
+            "encoded": 2795,
+            "decoded": 5937,
+            "duration": -124.09999999403954
+          }
+        ],
+        "errors": [],
+        "profile": {
+          "cpu": 4,
+          "latency": 100,
+          "bytesPerSecond": 1000000,
+          "gzip": true,
+          "cold": true
+        }
+      },
+      {
+        "mode": "none",
+        "run": 2,
+        "buttonAt": 1870.9000000059605,
+        "usableMs": 1933.2000000029802,
+        "paints": [
+          {
+            "name": "first-paint",
+            "ms": 328
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 1724
+          }
+        ],
+        "resources": [
+          {
+            "name": "/assets/index-43cpXYiX.js",
+            "encoded": 1090590,
+            "decoded": 3426265,
+            "duration": 1271.5
+          },
+          {
+            "name": "/assets/index-BNdfikoO.css",
+            "encoded": 13263,
+            "decoded": 68667,
+            "duration": 162.79999999701977
+          },
+          {
+            "name": "/assets/edgeWorker-BfEy4kEO.js",
+            "encoded": 2795,
+            "decoded": 5937,
+            "duration": -118.5
+          }
+        ],
+        "errors": [],
+        "profile": {
+          "cpu": 4,
+          "latency": 100,
+          "bytesPerSecond": 1000000,
+          "gzip": true,
+          "cold": true
+        }
+      }
+    ]
+  },
+  "after": {
+    "summary": {
+      "usableMedianMs": {
+        "default": 1926.7,
+        "none": 1931.7
+      },
+      "initialEncodedBytes": 1115229,
+      "initialDecodedBytes": 3533051
+    },
+    "runs": [
+      {
+        "mode": "default",
+        "run": 0,
+        "buttonAt": 1839.5,
+        "usableMs": 1926.7000000029802,
+        "paints": [
+          {
+            "name": "first-paint",
+            "ms": 272
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 1832
+          }
+        ],
+        "resources": [
+          {
+            "name": "/assets/index-kN7Jx664.js",
+            "encoded": 1096048,
+            "decoded": 3443181,
+            "duration": 1216.5
+          },
+          {
+            "name": "/assets/index-tvdCOPwX.css",
+            "encoded": 16386,
+            "decoded": 83933,
+            "duration": 136.3999999910593
+          },
+          {
+            "name": "/assets/edgeWorker-BfEy4kEO.js",
+            "encoded": 2795,
+            "decoded": 5937,
+            "duration": -139.90000000596046
+          }
+        ],
+        "errors": [],
+        "profile": {
+          "cpu": 4,
+          "latency": 100,
+          "bytesPerSecond": 1000000,
+          "gzip": true,
+          "cold": true
+        }
+      },
+      {
+        "mode": "default",
+        "run": 1,
+        "buttonAt": 1857.2000000029802,
+        "usableMs": 1936.7000000029802,
+        "paints": [
+          {
+            "name": "first-paint",
+            "ms": 276
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 1848
+          }
+        ],
+        "resources": [
+          {
+            "name": "/assets/index-kN7Jx664.js",
+            "encoded": 1096048,
+            "decoded": 3443181,
+            "duration": 1219.5
+          },
+          {
+            "name": "/assets/index-tvdCOPwX.css",
+            "encoded": 16386,
+            "decoded": 83933,
+            "duration": 138.29999999701977
+          },
+          {
+            "name": "/assets/edgeWorker-BfEy4kEO.js",
+            "encoded": 2795,
+            "decoded": 5937,
+            "duration": -140.19999998807907
+          }
+        ],
+        "errors": [],
+        "profile": {
+          "cpu": 4,
+          "latency": 100,
+          "bytesPerSecond": 1000000,
+          "gzip": true,
+          "cold": true
+        }
+      },
+      {
+        "mode": "default",
+        "run": 2,
+        "buttonAt": 1837.7999999970198,
+        "usableMs": 1905.5,
+        "paints": [
+          {
+            "name": "first-paint",
+            "ms": 264
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 1828
+          }
+        ],
+        "resources": [
+          {
+            "name": "/assets/index-kN7Jx664.js",
+            "encoded": 1096048,
+            "decoded": 3443181,
+            "duration": 1219.300000011921
+          },
+          {
+            "name": "/assets/index-tvdCOPwX.css",
+            "encoded": 16386,
+            "decoded": 83933,
+            "duration": 138.79999999701977
+          },
+          {
+            "name": "/assets/edgeWorker-BfEy4kEO.js",
+            "encoded": 2795,
+            "decoded": 5937,
+            "duration": -129.1000000089407
+          }
+        ],
+        "errors": [],
+        "profile": {
+          "cpu": 4,
+          "latency": 100,
+          "bytesPerSecond": 1000000,
+          "gzip": true,
+          "cold": true
+        }
+      },
+      {
+        "mode": "none",
+        "run": 0,
+        "buttonAt": 1839.8999999910593,
+        "usableMs": 1931.7000000029802,
+        "paints": [
+          {
+            "name": "first-paint",
+            "ms": 264
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 1832
+          }
+        ],
+        "resources": [
+          {
+            "name": "/assets/index-kN7Jx664.js",
+            "encoded": 1096048,
+            "decoded": 3443181,
+            "duration": 1221
+          },
+          {
+            "name": "/assets/index-tvdCOPwX.css",
+            "encoded": 16386,
+            "decoded": 83933,
+            "duration": 140.29999999701977
+          },
+          {
+            "name": "/assets/edgeWorker-BfEy4kEO.js",
+            "encoded": 2795,
+            "decoded": 5937,
+            "duration": -114.6000000089407
+          }
+        ],
+        "errors": [],
+        "profile": {
+          "cpu": 4,
+          "latency": 100,
+          "bytesPerSecond": 1000000,
+          "gzip": true,
+          "cold": true
+        }
+      },
+      {
+        "mode": "none",
+        "run": 1,
+        "buttonAt": 1845,
+        "usableMs": 1933.2999999970198,
+        "paints": [
+          {
+            "name": "first-paint",
+            "ms": 264
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 1832
+          }
+        ],
+        "resources": [
+          {
+            "name": "/assets/index-kN7Jx664.js",
+            "encoded": 1096048,
+            "decoded": 3443181,
+            "duration": 1220.199999988079
+          },
+          {
+            "name": "/assets/index-tvdCOPwX.css",
+            "encoded": 16386,
+            "decoded": 83933,
+            "duration": 139.1000000089407
+          },
+          {
+            "name": "/assets/edgeWorker-BfEy4kEO.js",
+            "encoded": 2795,
+            "decoded": 5937,
+            "duration": -117.79999999701977
+          }
+        ],
+        "errors": [],
+        "profile": {
+          "cpu": 4,
+          "latency": 100,
+          "bytesPerSecond": 1000000,
+          "gzip": true,
+          "cold": true
+        }
+      },
+      {
+        "mode": "none",
+        "run": 2,
+        "buttonAt": 1808,
+        "usableMs": 1880,
+        "paints": [
+          {
+            "name": "first-paint",
+            "ms": 272
+          },
+          {
+            "name": "first-contentful-paint",
+            "ms": 1808
+          }
+        ],
+        "resources": [
+          {
+            "name": "/assets/index-kN7Jx664.js",
+            "encoded": 1096048,
+            "decoded": 3443181,
+            "duration": 1215.7000000029802
+          },
+          {
+            "name": "/assets/index-tvdCOPwX.css",
+            "encoded": 16386,
+            "decoded": 83933,
+            "duration": 135.59999999403954
+          },
+          {
+            "name": "/assets/edgeWorker-BfEy4kEO.js",
+            "encoded": 2795,
+            "decoded": 5937,
+            "duration": -103.29999999701977
+          }
+        ],
+        "errors": [],
+        "profile": {
+          "cpu": 4,
+          "latency": 100,
+          "bytesPerSecond": 1000000,
+          "gzip": true,
+          "cold": true
+        }
+      }
+    ]
+  },
+  "verification": {
+    "unitPassed": 3115,
+    "unitSkipped": 24,
+    "mcpPassed": 123,
+    "measureUiAssertions": 40,
+    "productionBuild": true,
+    "availableBrowserSuitesPassed": true,
+    "limits": [
+      "Private scooter scan unavailable",
+      "Chrome only",
+      "No physical scanner, touch or SpaceMouse validation",
+      "Generated ideal sample is not scanner accuracy evidence"
+    ]
+  },
+  "previewRegression": {
+    "upstreamBaseline": "2cd89c6769a10c27ee7754b477ada521c9ef5cb7",
+    "cleanFix": "aa8d81c59d8bc245ab44af08be4d58a4b0abfbe4",
+    "before": {
+      "variation": 63,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "triangles": 3072
+    },
+    "after": {
+      "variation": 0,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "triangles": 3072
+    },
+    "pr": "https://github.com/CNCKitchen/ScanRuler/pull/40"
+  }
+}

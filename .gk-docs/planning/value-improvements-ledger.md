@@ -39,14 +39,14 @@ Maintain the existing measurement product through repeated inspect → reproduce
 ```
 Protect work and access       2 / 2
 Measure and reduce overhead   3 / 3
-Inspect workflows and guidance 1 / 2
+Inspect workflows and guidance 2 / 2
 Adopt supplied design system  0 / 1
                              ---------
-                             6 / 8 planned tasks
-Discovered                   0 / 0
+                             7 / 8 planned tasks
+Discovered                   1 / 1
 ```
 
-Last touched: 2026-10-31; SR01/SR02 published as PR23/PR31; SR03 responsiveness and archive guard published as PR32 (clean2e0dbd5). SR04/SR05 performance changes checked and pushed to the fork. SR07 runtime assessment complete. SR06 remaining workflow disposition and SR08 full design overhaul are active. No live verification job. Native loop active.
+Last touched: 2026-10-31; SR01/SR02 published as PR23/PR31; SR03 responsiveness and archive guard published as PR32 (clean2e0dbd5). SR04/SR05 performance changes checked and pushed to the fork. SR07 runtime assessment complete. SR06 is complete; SR08 full design overhaul remains active, with the verified first piece awaiting visual approval. No live verification job. Native loop active.
 
 ## Protect work and access
 
@@ -99,10 +99,11 @@ Last touched: 2026-10-31; SR01/SR02 published as PR23/PR31; SR03 responsiveness 
 
 ## Inspect remaining workflows
 
-- [ ] **SR-06** · medium · `src/app`, `src/core/project`, `src/core/workerRpc.ts`, `src/state/historyStore.ts`
+- [x] **SR-06** · medium · `src/app`, `src/core/project`, `src/core/workerRpc.ts`, `src/state/historyStore.ts`
       The first review sampled the product and cannot establish all save/recovery/undo and asynchronous worker transitions are safe.
       **Fix:** perform a bounded second inspection of recovery after errors, unit conversion, undo across workspaces, worker failure/cancellation and export round trips. Add only reproducible user-impacting defects with exact trigger, evidence, repair and proof, then work those findings. Inspect unresolved upstream bug reports for overlap before opening duplicate PRs. Stop after this sweep and its actionable findings; no perpetual speculative backlog.
       refs: `docs/manual.md`, `docs/development.md`
+      **Complete:** Reviewed the actual recovery/import/history/units/worker tests and rechecked their final gate logs at 6445fb4. Real browser paths cover failed and overlapping imports, nested-project refusal, IndexedDB reload/restore/quota failure, edits during save, cross-workspace undo, scan transforms and pins, mm/in conversion without geometry drift, and production project/STEP/cloud/SVG/DXF round trips. Worker crash/retry coverage combines fake-worker lifecycle tests with real texture-worker failure preservation; physical process exhaustion is not simulated. No additional defect reproduced in this bounded sweep. Existing Mac Command additive-pick issue is already addressed by open upstream PR20 (Starzrng, head7e43ff3); overlap recorded, not claimed repaired or republished. It remains a known input limitation to cover when applying SR08 selection behavior. No private scanner, Safari/Firefox or SpaceMouse claim.
       **Acceptance:** Record the exercised paths, outcomes, explicit blind spots and any new defect IDs. For each repair, preserve a failing-before/passing-after case through a real entry point and an independently reviewed clean PR or a precise publication blocker.
       route: substantial/longctx
 
@@ -117,7 +118,7 @@ Last touched: 2026-10-31; SR01/SR02 published as PR23/PR31; SR03 responsiveness 
       Greg explicitly requests a full application overhaul following this supplied design system, once the current work reaches a sensible point. This overrides the run's former no-redesign restriction for this item.
       **Work:** read and render the supplied reference; map its tokens, desktop/mobile shell, project/tool/context panels, selection-driven actions, precise unit-labeled controls, preview/commit/undo, accessible feedback, command discovery and task-based onboarding to ScanRuler's existing capabilities. Preserve original design references and existing feature behavior. Apply the system throughout core 3D/2D measurement, deviation/thickness, mesh tools, reverse engineering, project/import/export, settings/help/recovery and transient UI. Do not replace live controls with mockups or add unsupported CAD/cloud capabilities merely because the generic reference mentions them.
       **Sequence:** finish work-preservation/access fixes and capture performance baselines; build one complete working screen/tool loop and show it to Greg. His supplied AGENTS.md rule 16 requires approval of one finished piece before producing the rest of the visual overhaul. Keep independent inspections progressing while that decision is pending. After approval, complete the application, not an MVP or reskin.
-      **Coverage map:** `.gk-docs/planning/design-adoption-matrix.md` maps every workspace/component/interaction to existing code. All design rows remain planned; no visual completion claimed. Reference rendered/inspected at1440×1000 and390×844; its mobile clipping/hidden panels must be corrected according to written requirements, not copied.
+      **Coverage map:** `.gk-docs/planning/design-adoption-matrix.md` maps every workspace/component/interaction to existing code. The first 3D Measure piece is implemented and verified at d87bdae (3,115 unit / 123 MCP / build / all available browser suites); the remaining workspaces are planned. No full-overhaul completion claimed. Reference rendered/inspected at1440×1000 and390×844; its mobile clipping/hidden panels must be corrected according to written requirements, not copied.
       **Acceptance:** a requirement-by-requirement design-system matrix with code/runtime evidence; full functional regression gate; real imported/saved projects and command parity; linked tree/viewport selection; valid contextual actions; exact numeric edits and undo; novice task completion; keyboard and responsive checks including 200% zoom, focus/announcements, reduced motion and visible units; before/after performance comparison on identical inputs. Rendered desktop/mobile application screens must follow the supplied visual reference. Physical pen/touch and unavailable browsers remain explicit validation limits, not claimed passes.
       **Publication:** commit/push checked design work to Greg's fork, separately from upstream bugfix PRs. Deployment and an upstream design PR require separate authorization. Source reference docs remain inputs, not files to overwrite or claim as our authorship.
       route: substantial/design-implementation
@@ -129,7 +130,9 @@ Last touched: 2026-10-31; SR01/SR02 published as PR23/PR31; SR03 responsiveness 
 
 ## New — found while working, not planned
 
-None yet.
+- [x] **SR-09** · medium · coplanar fitted-preview depth conflict
+      Visual inspection reproduced alternating bands where a fitted preview lies on the scan. Use the existing committed-shell polygon depth offset for filled previews; fitted vertices and depth testing remain unchanged. Integration d87bdae. Same 3,072-triangle input/camera/assertion gives pixel range 63 before and 0 after, both locally and against current upstream 2cd89c6. Standalone regression, boundary/units checks and production build pass on isolated branch. Full integration gate passed 3,115 unit / 123 MCP / build / all available browser suites; private fixture skipped. Published https://github.com/CNCKitchen/ScanRuler/pull/40 under Greg-J, exact clean aa8d81c head, main base, exactly two source/test files. No design or automation files upstream. Raw evidence: reference/measurements/design-build-01.json.
+
 
 ## Run log
 
