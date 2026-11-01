@@ -273,7 +273,7 @@ export class FlatScene {
           this.onPick?.(p, {
             alt: e?.altKey ?? false,
             shift: e?.shiftKey ?? false,
-            ctrl: e?.ctrlKey ?? false,
+            ctrl: Boolean(e?.ctrlKey || e?.metaKey),
             unitsPerScreenPx: this.unitsPerScreenPx(),
           })
         }
@@ -810,7 +810,7 @@ export class FlatScene {
       if (!p) return
       if (!d.moved) this.container.style.cursor = 'grabbing'
       d.moved = true
-      this.onSheetDrag?.(p, { alt: ev.altKey, ctrl: ev.ctrlKey, unitsPerScreenPx: this.unitsPerScreenPx() })
+      this.onSheetDrag?.(p, { alt: ev.altKey, ctrl: ev.ctrlKey || ev.metaKey, unitsPerScreenPx: this.unitsPerScreenPx() })
     }
     const up = (ev: PointerEvent) => {
       document.removeEventListener('pointermove', move)
@@ -819,7 +819,7 @@ export class FlatScene {
       const d = this.sheetDragging
       this.sheetDragging = null
       this.container.style.cursor = this.pinHover || this.dragHover ? 'grab' : this.baseCursor
-      const meta = { alt: ev.altKey, shift: ev.shiftKey, ctrl: ev.ctrlKey, unitsPerScreenPx: this.unitsPerScreenPx() }
+      const meta = { alt: ev.altKey, shift: ev.shiftKey, ctrl: ev.ctrlKey || ev.metaKey, unitsPerScreenPx: this.unitsPerScreenPx() }
       if (d?.moved) this.onSheetDragEnd?.(meta)
       else {
         const p = this.pick(start.x, start.y)
@@ -1047,7 +1047,7 @@ export class FlatScene {
       else if (!moved) {
         // The navigator never saw the press, so the click is said from here.
         const p = this.pick(start.x, start.y)
-        if (p) this.onPick?.(p, { alt: ev.altKey, shift: ev.shiftKey, ctrl: ev.ctrlKey, unitsPerScreenPx: this.unitsPerScreenPx() })
+        if (p) this.onPick?.(p, { alt: ev.altKey, shift: ev.shiftKey, ctrl: ev.ctrlKey || ev.metaKey, unitsPerScreenPx: this.unitsPerScreenPx() })
       }
     }
     const cancel = (ev: PointerEvent) => {
