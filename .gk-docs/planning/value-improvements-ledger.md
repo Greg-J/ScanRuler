@@ -46,7 +46,7 @@ Adopt supplied design system  0 / 1
 Discovered                   1 / 1
 ```
 
-Last touched: 2026-10-31; SR01/SR02 published as PR23/PR31; SR03 responsiveness and archive guard published as PR32 (clean2e0dbd5). SR04/SR05 performance changes checked and pushed to the fork. SR07 runtime assessment complete. SR06 is complete; SR08 full design overhaul remains active, with the verified first piece awaiting visual approval. No live verification job. Native loop active.
+Last touched: 2026-10-31; SR01/SR02 published as PR23/PR31; SR03 responsiveness and archive guard published as PR32 (clean2e0dbd5). SR04/SR05 performance changes checked and pushed to the fork. SR07 runtime assessment complete. SR06 is complete; SR08 full design overhaul remains active, with the verified first piece awaiting visual approval. No live verification job. Native loop blocked on first-piece visual approval; build 01 remains available at http://127.0.0.1:5198/.
 
 ## Protect work and access
 
@@ -141,3 +141,5 @@ Last touched: 2026-10-31; SR01/SR02 published as PR23/PR31; SR03 responsiveness 
 2026-10-31: Native task loop activated after Greenskeeper doctor required missing global skill links. No global links were installed; gk run remains stopped. Missing-link approval is no longer required. Commit 2ceaafe repairs native input simulation; the two previously failing browser suites pass unchanged assertions.
 
 2026-10-31: SR02 published as PR31 after full integration gate and isolated validation. All active verification processes finished. SR03 archive-expansion overlap discovered in upstream PR28 by Jozkah; review rather than duplicate it.
+
+2026-10-31: Blocked audit: first-piece approval remains absent across the handoff and two automatic continuations. SR01–07 and discovered SR09 are complete; SR08 remains incomplete. All five upstream PRs are open under Greg-J with no reviewer change requests; the only reported failing checks are CLA checks requiring Greg personally. Build 01 HTTP response and source manifest verified; branch pushed. No independently actionable item remains in this bounded ledger. Do not restart GPU/timing jobs or extend visual layouts before Greg responds.
