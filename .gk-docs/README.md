@@ -11,4 +11,4 @@ Upstream docs in `docs/`, `mcp/`, and `plugins/` remain in their existing format
 
 The run ledger is `planning/value-improvements-ledger.md`.
 
-| [Upstream design proposal](reference/design-upstream-pr.md) | authoritative | Draft PR #71, current-upstream port, verification and active review server |
+| [Upstream design proposal](reference/design-upstream-pr.md) | authoritative | Draft PR #71, current-upstream port, verification and review server status |

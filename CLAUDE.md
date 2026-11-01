@@ -25,7 +25,7 @@ This file is tracked only on the automation branch and must never enter an upstr
 
 ## Current handoff
 
-Build 03: http://127.0.0.1:5200/ . Source 059702612fab754241f959ff507b2a744a1aad71; review copy `e2e-out/review/build-03`. All six workspaces now use the supplied design and darker dark mode. Guided measurement, shared 2D selection and keyboard body-tree controls are implemented. The first-piece approval blocker is superseded.
+Build 03 server is stopped at Greg’s request. Saved production copy remains available locally. Source 059702612fab754241f959ff507b2a744a1aad71; review copy `e2e-out/review/build-03`. All six workspaces now use the supplied design and darker dark mode. Guided measurement, shared 2D selection and keyboard body-tree controls are implemented. The first-piece approval blocker is superseded.
 
 Full final gate passed: 3,116 unit tests (24 skipped), 123 MCP tests, production build and 27 configured browser suites. Additional production workspace/guide and note checks passed. Build 02→03 startup medians: 1888.5→1885.3 ms default, 1854.8→1852.9 ms without plugins; +5,316 encoded bytes (0.48%). Effectively unchanged startup, no speed gain claim. See `.gk-docs/reference/design-build-03.md` and raw measurements.
 
@@ -106,3 +106,5 @@ Current executor status: BLOCKED on Greg's first-piece visual approval after the
 2026-11-01: Greg: "We should offer this as a pull request or a fork to merge or however something this large should be handled". This authorizes publishing the complete design/guidance contribution as a draft upstream PR under Greg-J. Prepare a clean branch against current upstream, keep local automation records out, disclose related bug PRs and validation limits, include reviewable screenshots and run instructions. This supersedes the earlier upstream-design-PR restriction. No deployment, merge or CLA signature is authorized.
 
 2026-11-01: Greg: "kill 5198 and 5199". Stopped the build 01 and build 02 review servers and verified neither port has a listener. Build 03 remains available on port 5200. Historical review links below describe past handoffs, not active servers.
+
+2026-11-01: Greg: "kill the server". Stopped the remaining ScanRuler review server on port 5200 and verified no listener remains. All three review servers are now stopped; historical localhost links are inactive.

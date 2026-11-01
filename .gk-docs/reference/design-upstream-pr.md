@@ -49,8 +49,9 @@ unverified.
 ## Local handoff and publication status
 
 Greg requested stopping ports 5198 and 5199; both are stopped and verified.
-The unchanged local build 03 remains at http://127.0.0.1:5200/ and returned
-HTTP 200 after publication. All temporary verification servers have closed.
+Build 03 returned HTTP 200 on port 5200 after publication. Greg subsequently
+requested stopping the remaining server; port 5200 now has no listener. All
+three review servers and the temporary verification servers are stopped.
 The root automation branch remains on its reviewed 0.9.2 implementation;
 current-upstream source changes are isolated in the PR worktree.
 
